@@ -78,8 +78,8 @@ const Footer = () => {
                   SHOP.CO
                 </h3>
                 <p className="text-sm leading-5 w-[357px] h-[40px] text-[#00000099] lg:w-[248px] lg:[66px] lg:leading-[22px]">
-                  We have clothes that suits your style and which you're proud
-                  to wear. From women to men.
+                  We have clothes that suits your style and which you&apos;re
+                  proud to wear. From women to men.
                 </p>
               </div>
               <div className="icons w-[148px] h-7 flex items-center gap-3">

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { GiHamburgerMenu } from "react-icons/gi";
 import hamburger from "@/app/images/HeaderImages/hamburger.png";
 import profileIcon from "@/app/images/HeaderImages/profileIcon.png";
 import searchIcon from "@/app/images/HeaderImages/searchIcon.png";
