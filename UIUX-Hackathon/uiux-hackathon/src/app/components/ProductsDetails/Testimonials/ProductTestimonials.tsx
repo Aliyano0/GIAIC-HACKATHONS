@@ -44,13 +44,13 @@ const ProductTestimonials = () => {
   return (
     <div className="w-[358px] mx-[16px] mt-[50px] lg:mt-0 lg:w-[1240px] lg:mx-[100px]">
       <div className="testimonials-nav w-[1240px] flex space-x-3 gap-[45px]">
-        <p className="w-[107px] h-[11px] leading-[22px] text-[#00000099] lg:w-[413px] lg:h-[14px] lg:text-[20px] text-center">
+        <p className="w-[107px] h-[11px] leading-[22px] text-[#00000099] lg:w-[413px] lg:h-[14px] lg:text-[20px] text-center cursor-pointer">
           Product Details
         </p>
-        <p className="w-[123px] pb-[38px] h-[12px] leading-[22px] text-black border-b-[2px] border-b-black  lg:w-[413px] lg:h-[14px] font-medium lg:text-[20px] text-center">
+        <p className="w-[123px] pb-[38px] h-[12px] leading-[22px] text-black border-b-[2px] border-b-black lg:w-[413px] lg:h-[14px] font-medium lg:text-[20px] text-center cursor-pointer">
           Rating & Reviews
         </p>
-        <p className="w-[38px] h-[11px] leading-[22px] text-[#00000099] text-center lg:w-[413px] lg:h-[14px] lg:text-[20px]">
+        <p className="w-[38px] h-[11px] leading-[22px] text-[#00000099] text-center lg:w-[413px] lg:h-[14px] lg:text-[20px] cursor-pointer">
           FAQs
         </p>
       </div>
@@ -59,7 +59,7 @@ const ProductTestimonials = () => {
 
       <div className="header flex items-center justify-between w-[358px] my-[20px] lg:w-[1240px]">
         <div className="heading-text flex items-center gap-2 h-[27px] jus">
-          <h5 className="w-[104px] h-[27px] font-bold text-xl leading-[27px] lg:w-[125px] lg:h-8 lg:text-2xl lg:leading-[32.4px]">
+          <h5 className="w-[104px] h-[27px] font-bold text-xl leading-[27px] lg:w-[125px] lg:h-8 lg:text-2xl lg:leading-[32.4px] ">
             All Reviews
           </h5>
           <span className="w-[29px] text-sm leading-[22px] text-[#00000099]">
@@ -67,10 +67,10 @@ const ProductTestimonials = () => {
           </span>
         </div>
         <div className="filters-btn flex items-center gap-1">
-          <div className="filtser w-10 h-10 flex items-center justify-center lg:w-12 lg:h-12">
+          <div className="filter w-10 h-10 flex items-center justify-center lg:w-12 lg:h-12 cursor-pointer">
             <RxMixerVertical />
           </div>
-          <div className="latest hidden w-[120px] h-12 rounded-[62px] py-4 px-5 leading-[21.6px] font-medium lg:flex justify-between items-center">
+          <div className="latest hidden w-[120px] h-12 rounded-[62px] py-4 px-5 leading-[21.6px] font-medium lg:flex justify-between items-center cursor-pointer">
             <span>Latest</span>
             <span>
               <FaAngleDown />
@@ -94,7 +94,7 @@ const ProductTestimonials = () => {
         })}
       </div>
       <div className="load-more-btn flex justify-center items-center">
-        <button className="mt-5 w-[195px] h-[47px] rounded-[62px] border-[1px] border-[#0000001a] py-[14px] px-9 text-sm leading-[18.9px]">
+        <button className="mt-5 lg:mt-9 w-[195px] h-[47px] rounded-[62px] border-[1px] border-[#0000001a] py-[14px] px-9 text-sm leading-[18.9px] lg:w-[230px] lg:h-[52px] lg:text-base lg:leading-[21.6px]">
           Load More Reviews
         </button>
       </div>
