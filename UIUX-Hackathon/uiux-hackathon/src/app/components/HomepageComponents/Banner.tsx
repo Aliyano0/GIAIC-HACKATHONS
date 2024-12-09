@@ -8,21 +8,41 @@ const Banner = () => {
   return (
     <>
       <div className="bg-white h-[194px] w-[1440px] relative z-20">
-        <div className="w-[1440px] h-[122px] bg-black text-white flex justify-evenly items-center relative z-30">
+        <div className="w-[390px] h-[146px] lg:w-[1440px] lg:h-[122px] bg-black text-white flex justify-evenly lg:flex-none flex-wrap items-center relative z-30">
           <div className="logo">
-            <Image src={versaceLogo} alt="Versace Logo"></Image>
+            <Image
+              src={versaceLogo}
+              alt="Versace Logo"
+              className="w-[116.74px] h-[23.25px] lg:w-[166.48px] lg:h-[33.16px]"
+            ></Image>
           </div>
           <div className="logo">
-            <Image src={zaraLogo} alt="Zara Logo"></Image>
+            <Image
+              src={zaraLogo}
+              alt="Zara Logo"
+              className="w-[63.81px] h-[26.65px] lg:w-[91px] lg:h-[38px]"
+            ></Image>
           </div>
           <div className="logo">
-            <Image src={gucciLogo} alt="Gucci Logo"></Image>
+            <Image
+              src={gucciLogo}
+              alt="Gucci Logo"
+              className="w-[109.39px] h-[25.24px] lg:w-[156px] lg:h-[36px]"
+            ></Image>
           </div>
           <div className="logo">
-            <Image src={pradaLogo} alt="Prada Logo"></Image>
+            <Image
+              src={pradaLogo}
+              alt="Prada Logo"
+              className="w-[127px] h-[21px] lg:w-[194px] lg:h-[32px]"
+            ></Image>
           </div>
           <div className="logo">
-            <Image src={calvinKleinLogo} alt="Calvin Klein Logo"></Image>
+            <Image
+              src={calvinKleinLogo}
+              alt="Calvin Klein Logo"
+              className="w-[134.84px] h-[21.75px] lg:w-[206.79px] lg:h-[33.35px]"
+            ></Image>
           </div>
         </div>
       </div>

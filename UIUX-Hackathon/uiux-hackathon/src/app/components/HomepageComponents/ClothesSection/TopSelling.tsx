@@ -43,11 +43,13 @@ const productsCardData = [
 const TopSelling = () => {
   return (
     <>
-      <div className="section lg:px-[100px] lg:w-[1240px] bg-white relative z-20">
-        <div className="heading integralCF font-bold text-5xl leading-[57.6px] w-[1440px] h-[58px] flex items-center justify-center relative z-20 mb-[55px]">
-          <h1 className="w-[403px] h-[58px]">TOP SELLING</h1>
+      <div className="section w-[390px] lg:px-[100px] lg:w-[1240px] bg-white relative z-20">
+        <div className="heading integralCF w-[390px] h-[38px] font-bold mt-20 text-[32px] leading-[38.4px] lg:mt-0 lg:text-5xl lg:leading-[57.6px] lg:w-[1440px] lg:h-[58px] flex items-center justify-center relative z-20 mb-[55px]">
+          <h1 className="w-[231px] h-[38px] lg:w-[403px] lg:h-[58px]">
+            TOP SELLING
+          </h1>
         </div>
-        <div className="clothes-row flex gap-5">
+        <div className="clothes-row flex gap-[14px] lg:gap-5 overflow-hidden lg:overflow-visible pl-4 lg:pl-0">
           {productsCardData.map((elem) => {
             return (
               <ClothesCard
@@ -62,8 +64,8 @@ const TopSelling = () => {
             );
           })}
         </div>
-        <div className="viewAllBtn w-[1240px] mt-10 mb-32 flex justify-center items-center">
-          <button className="w-[218px] h-[52px] rounded-[62px] border-[1px] border-[#0000001a] py-4 px-[54px] font-medium leading-[21.6px]">
+        <div className="viewAllBtn w-[390px] lg:w-[1240px] mt-10 mb-32 flex justify-center items-center">
+          <button className="w-[358px] h-[46px] lg:w-[218px] lg:h-[52px] rounded-[62px] border-[1px] border-[#0000001a] py-4 px-[54px] font-medium text-sm leading-[18.9px] lg:text-base lg:leading-[21.6px]">
             View All
           </button>
         </div>
