@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Static UI Website
 
-## Getting Started
+## Features
 
-First, run the development server:
+- **Static Site Generation (SSG):** Optimized for fast page loads and SEO.
+- **Responsive Design:** Ensures usability on all devices, including mobile, tablet, and desktop.
+- **Dynamic Routing:** Intuitive page structure with dynamic routing for scalable content.
+- **SEO Optimization:** Meta tags, canonical links, and alt attributes for images.
+- **Global Styles:** Consistent styling across all pages using Tailwind CSS.
+- **Component Reusability:** Modular components for maintainable and reusable code.
+- **Lightweight Assets:** Optimized images using the Next.js `Image` component.
+- **Accessibility:** Built with accessibility best practices (ARIA roles, semantic HTML).
+- **Performance Tracking:** Web vitals monitoring with integrated Lighthouse reports.
+- **404 Page:** Custom-designed error page for better user experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Pages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 1. **Home (https://giaic-uiux-hackathon-mfd2v83mo-aliyans-projects-31613c06.vercel.app/)**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 2. **Product-Details (https://giaic-uiux-hackathon-mfd2v83mo-aliyans-projects-31613c06.vercel.app//ProductDetail)**
 
-## Learn More
+### 3. **Cart (https://giaic-uiux-hackathon-mfd2v83mo-aliyans-projects-31613c06.vercel.app//Cart)**
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<!-- NOT FINISHED YET -->
+### 4. **Category (https://giaic-uiux-hackathon-mfd2v83mo-aliyans-projects-31613c06.vercel.app//Category)**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Additional Notes
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Deployment:** Hosted on Vercel for seamless integration with Next.js.
+- **Assets Folder:** Includes static assets such as images, fonts, and documents.
+- **Tailwind CSS:** Used for custom styling and utility-first design.
