@@ -17,15 +17,15 @@
 
 ## Pages
 
-### 1. **Home (https://giaic-uiux-hackathon-mfd2v83mo-aliyans-projects-31613c06.vercel.app/)**
+### 1. **Home (https://giaic-uiux-hackathon-rouge.vercel.app/)**
 
-### 2. **Product-Details (https://giaic-uiux-hackathon-mfd2v83mo-aliyans-projects-31613c06.vercel.app//ProductDetail)**
+### 2. **Product-Details (https://giaic-uiux-hackathon-rouge.vercel.app/ProductDetail)**
 
-### 3. **Cart (https://giaic-uiux-hackathon-mfd2v83mo-aliyans-projects-31613c06.vercel.app//Cart)**
-
+### 3. **Cart (https://giaic-uiux-hackathon-rouge.vercel.app/Cart)**
 
 <!-- NOT FINISHED YET -->
-### 4. **Category (https://giaic-uiux-hackathon-mfd2v83mo-aliyans-projects-31613c06.vercel.app//Category)**
+
+### 4. **Category (https://giaic-uiux-hackathon-rouge.vercel.app/Category)**
 
 ## Additional Notes
 
