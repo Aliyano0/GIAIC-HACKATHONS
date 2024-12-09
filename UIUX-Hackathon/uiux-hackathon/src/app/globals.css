@@ -2,11 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 .integralCF {
   font-family: var(--font-integralCF);
 }
 body {
   font-family: var(--font-satoshi);
+  overflow-x: hidden;
 }

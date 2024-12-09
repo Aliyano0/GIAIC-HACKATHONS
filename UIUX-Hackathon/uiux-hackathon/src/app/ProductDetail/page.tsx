@@ -1,4 +1,6 @@
 import ProductDetail from "../components/ProductsDetails/ProductDetail";
+import ProductsSuggestions from "../components/ProductsDetails/ProductsSuggestions";
+import ProductTestimonials from "../components/ProductsDetails/Testimonials/ProductTestimonials";
 
 const ProductDetailPage = () => {
   return (
@@ -16,6 +18,8 @@ const ProductDetailPage = () => {
         <p>T-shirts</p>
       </div>
       <ProductDetail />
+      <ProductTestimonials />
+      <ProductsSuggestions />
     </div>
   );
 };
