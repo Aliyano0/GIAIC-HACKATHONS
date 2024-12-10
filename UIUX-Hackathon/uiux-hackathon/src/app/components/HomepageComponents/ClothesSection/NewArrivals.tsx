@@ -1,4 +1,4 @@
-import ClothesCard from "./ClothesCard";
+import ClothesCard from "./Utils/ClothesCard";
 import blackT from "@/app/images/HomePageImages/ClothesImages/BlackTShirt.png";
 import blueJeans from "@/app/images/HomePageImages/ClothesImages/BlueJeans.png";
 import checkeredShirt from "@/app/images/HomePageImages/ClothesImages/RedCheckedShirt.png";

@@ -1,7 +1,7 @@
 import { TfiEmail } from "react-icons/tfi";
 import { FaTwitter, FaGithub } from "react-icons/fa6";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
-import FooterLinks from "./FooterLinks";
+import FooterLinks from "./Utils/FooterLinks";
 import Image from "next/image";
 import visaCard from "@/app/images/FooterImages/visaCard.png";
 import masterCard from "@/app/images/FooterImages/masterCard.png";

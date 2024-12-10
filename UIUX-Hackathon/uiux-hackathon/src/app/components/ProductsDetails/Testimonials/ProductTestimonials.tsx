@@ -1,4 +1,4 @@
-import ProductReview from "./ProductReview";
+import ProductReview from "./Utils/ProductReview";
 import { RxMixerVertical } from "react-icons/rx";
 import { FaAngleDown } from "react-icons/fa6";
 const customerReviews = [

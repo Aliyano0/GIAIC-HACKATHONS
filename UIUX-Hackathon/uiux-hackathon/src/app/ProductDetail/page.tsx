@@ -1,5 +1,5 @@
 import ProductDetail from "../components/ProductsDetails/ProductDetail";
-import ProductsSuggestions from "../components/ProductsDetails/ProductsSuggestions";
+import ProductsSuggestions from "../components/ProductsDetails/Utils/ProductsSuggestions";
 import ProductTestimonials from "../components/ProductsDetails/Testimonials/ProductTestimonials";
 
 const ProductDetailPage = () => {

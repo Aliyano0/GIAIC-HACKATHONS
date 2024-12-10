@@ -1,5 +1,5 @@
 import Image from "next/image";
-import BrandInfo from "./BrandInfo";
+import BrandInfo from "./Utils/BrandInfo";
 import heroSectionStarSmall from "@/app/images/HomePageImages/HeroImages/heroSectionStarSmall.png";
 import heroSectionStarLarge from "@/app/images/HomePageImages/HeroImages/heroSectionStarSmall.png";
 import modelsImage from "@/app/images/HomePageImages/HeroImages/models-image.jpg";

@@ -6,7 +6,7 @@ import rating35 from "@/app/images/HomePageImages/ClothesImages/3.5rating.png";
 import rating4 from "@/app/images/HomePageImages/ClothesImages/rating4.png";
 import rating45 from "@/app/images/HomePageImages/ClothesImages/BlackTRating.png";
 import rating5 from "@/app/images/HomePageImages/ClothesImages/rating5.png";
-import ClothesCard from "../HomepageComponents/ClothesSection/ClothesCard";
+import ClothesCard from "../../HomepageComponents/ClothesSection/Utils/ClothesCard";
 
 const productsCardData = [
   {

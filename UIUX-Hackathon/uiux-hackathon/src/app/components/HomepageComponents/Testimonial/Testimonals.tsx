@@ -1,4 +1,4 @@
-import Review from "./Review";
+import Review from "./Utils/Review";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa6";
 
 const customerReviews = [
