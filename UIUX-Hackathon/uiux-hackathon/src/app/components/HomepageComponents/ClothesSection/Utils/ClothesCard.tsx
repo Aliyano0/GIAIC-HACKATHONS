@@ -44,9 +44,9 @@ const ClothesCard = ({
                 <p className="line-through text-[#00000066]">
                   ${discountedPrice}
                 </p>
-                <span className="w-[42px] h-5 lg:w-[58px] lg:h-7 rounded-[62px] py-[6px] px-[14px] bg-[#ff33331a] text-[#ff3333] text-[10px] leading-[13.5px] lg:text-xs lg:leading-[16.2px] font-medium">
+                <p className="w-[42px] h-5 lg:w-[58px] lg:h-7 rounded-[62px] bg-[#ff33331a] text-[#ff3333] text-[10px] leading-[13.5px] lg:text-xs lg:leading-[16.2px] font-medium flex justify-center items-center">
                   {discountPercentage}
-                </span>
+                </p>
               </div>
             )}
           </div>

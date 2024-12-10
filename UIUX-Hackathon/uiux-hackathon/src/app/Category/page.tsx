@@ -11,7 +11,7 @@ const Category = () => {
   return (
     <>
       <div className="line w-[358px] mx-4 my-6 lg:mt-6 lg:ml-[100px] lg:w-[1240px] bg-[#0000001a] h-[1px]"></div>
-      <div className="page-pathname px-4 w-[390px] h-[19px] text-sm lg:text-base lg:leading-[21.6px] lg:mt-0 lg:mb-6 mb-3 flex items-center gap-1 lg:w-[1440px] lg:px-[100px]">
+      <div className="page-pathname px-4 w-[390px] h-8 text-sm lg:text-base lg:leading-[21.6px] lg:mt-0 lg:mb-6 mb-3 flex items-center gap-1 lg:w-[1440px] lg:px-[100px]">
         <span>
           <span className="text-[#00000099]">Home</span> <span>&gt;</span>
         </span>

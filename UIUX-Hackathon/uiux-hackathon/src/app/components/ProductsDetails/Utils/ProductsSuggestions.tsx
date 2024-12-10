@@ -16,7 +16,7 @@ const productsCardData = [
     productRating: rating4,
     productPrice: "212",
     discountedPrice: "242",
-    disountPercentage: "-20%",
+    discountPercentage: "-20%",
   },
   {
     id: 2,

@@ -28,17 +28,19 @@ const CasualProductCard = ({
             alt="Stars Rating"
             className="w-[127px] h-4 lg:w-[135px] lg:h-[19px]"
           ></Image>
-          <div className="prices flex gap-[5px] font-bold text-xl leading-[27px] lg:text-2xl lg:leading-[32.4px] lg:gap-3">
-            <p className="price ">${productPrice}</p>
+          <div className="prices flex gap-[5px]   lg:gap-3">
+            <p className="price font-bold text-xl leading-[27px] lg:text-2xl lg:leading-[32.4px]">
+              ${productPrice}
+            </p>
 
             {discountedPrice && (
               <div className="flex gap-[5px] lg:gap-[10px]">
-                <p className="line-through text-[#00000066]">
+                <p className="line-through text-[#00000066] font-bold text-xl leading-[27px] lg:text-2xl lg:leading-[32.4px]">
                   ${discountedPrice}
                 </p>
-                <span className="w-[42px] h-5 lg:w-[58px] lg:h-7 rounded-[62px] py-[6px] px-[14px] bg-[#ff33331a] text-[#ff3333] text-[10px] leading-[13.5px] lg:text-xs lg:leading-[16.2px] font-medium">
+                <p className="w-[42px] h-5 lg:w-[58px] lg:h-7 rounded-[62px] bg-[#ff33331a] text-[#ff3333] text-[10px] leading-[13.5px] lg:text-xs lg:leading-[16.2px] font-medium flex justify-center items-center">
                   {discountPercentage}
-                </span>
+                </p>
               </div>
             )}
           </div>

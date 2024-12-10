@@ -10,8 +10,8 @@ const Navbar = () => {
   return (
     <>
       <header className="w-[390px] lg:w-[1440px]">
-        <div className="discount-headline w-[390px] h-[34px] py-[9px] px-[54px] bg-black text-white lg:w-[1440px] lg:h-[38px] lg:flex">
-          <p className="w-[301px] h-[16px] mx-auto leading-[16.2px] text-[12px] lg:w-[355px] lg:h-[19] lg:text-[14px] lg:leading-[18.9px]">
+        <div className="discount-headline w-[390px] h-[34px] py-[9px] px-[54px] bg-black text-white lg:w-[1440px] lg:h-[38px] lg:flex leading-[16.2px] text-[12px] lg:text-[14px] lg:leading-[18.9px]">
+          <p className="w-[301px] h-[16px] mx-auto lg:w-[355px] lg:h-[19] ">
             Sign up and get 20% off to your first order.{" "}
             <span className="font-medium underline">Sign Up Now</span>
           </p>
@@ -21,12 +21,12 @@ const Navbar = () => {
         </div>
         <nav className="w-[390px] h-[58px] flex justify-between items-center px-5 lg:w-[1240px] lg:h-[48px] lg:mx-[100px] lg:px-0 lg:my-6 ">
           <div className="hamburger-brand flex gap-3 items-center">
-            <div className="flex items-center justify-center h-[22px] lg:hidden text-black text-lg">
+            <div className="flex pt-1 items-center justify-center h-[23px] lg:hidden cursor-pointer">
               {/* <GiHamburgerMenu /> */}
               <Image
                 src={hamburger}
-                width={22}
-                height={22}
+                width={23}
+                height={23}
                 alt="Hamburger menu"
               ></Image>
             </div>
