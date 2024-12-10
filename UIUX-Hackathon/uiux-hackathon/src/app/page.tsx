@@ -11,6 +11,7 @@ export default function Home() {
       <Hero />
       <Banner />
       <NewArrivals />
+      <div className="line w-[358px] mx-4 h-[1px] text-[#0000001a] lg:w-[1240px] lg:mx-[100px]"></div>
       <TopSelling />
       <Browse />
       <Testimonials />

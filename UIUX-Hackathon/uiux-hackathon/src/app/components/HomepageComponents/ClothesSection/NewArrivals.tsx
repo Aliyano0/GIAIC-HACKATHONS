@@ -43,7 +43,7 @@ const productsCardData = [
 const NewArrivals = () => {
   return (
     <>
-      <div className="section w-[390px] lg:px-[100px] lg:w-[1240px] bg-white relative z-20">
+      <div className="section w-[390px] lg:px-[100px] lg:w-[1240px] bg-white relative z-20 mb-10">
         <div className="heading w-[390px] h-[38px] integralCF font-bold text-[32px] leading-[38.4px] lg:text-5xl lg:leading-[57.6px] lg:w-[1440px] lg:h-[58px] flex items-center justify-center relative z-20 mb-8 lg:mb-[55px]">
           <h1 className="w-[269px] h-[38px] lg:w-[403px] lg:h-[58px]">
             NEW ARRIVALS

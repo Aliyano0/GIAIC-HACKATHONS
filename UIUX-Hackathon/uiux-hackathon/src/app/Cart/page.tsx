@@ -35,7 +35,7 @@ const ProductsCartItems = [
 const Cart = () => {
   return (
     <>
-      <div className="page-pathname mt-10 px-4 w-[358px] h-[19px] text-sm leading-[18.9] lg:text-base lg:leading-[21.6px] lg:mt-12  flex items-center gap-1 lg:w-[1440px] lg:px-[100px]">
+      <div className="page-pathname mt-10 mx-4 w-[358px] h-[19px] text-sm leading-[18.9] lg:text-base lg:leading-[21.6px] lg:mt-12  flex items-center gap-1 lg:w-[1440px] lg:px-[100px]">
         <p>
           <span className="text-[#00000099]">Home</span> <span>&gt;</span>
         </p>
@@ -91,7 +91,7 @@ const Cart = () => {
               </div>
             </div>
             <div className="promo w-[318px] lg:w-[457px] h-12 flex gap-3">
-              <div className="input-box w-[318px] lg:w-[326px] h-12 rounded-[62px] py-3 px-4 flex gap-[10px] lg:gap-3 items-center">
+              <div className="input-box w-[218px] lg:w-[326px] h-12 rounded-[62px] py-3 px-4 flex gap-[10px] lg:gap-3 items-center">
                 <div className="discount-icon text-[#00000066] text-lg lg:text-xl">
                   <MdOutlineDiscount />
                 </div>

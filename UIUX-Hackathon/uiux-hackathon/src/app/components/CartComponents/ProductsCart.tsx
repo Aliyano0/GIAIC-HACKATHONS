@@ -19,7 +19,7 @@ const ProductsCart = ({
   return (
     <>
       <div className="w-[330px] h-[99px] lg:w-[667px] lg:h-[124px] flex gap-[14px] lg:gap-4">
-        <div className="product-image h-[99px] w-[99px] lg:w-[124px] lg:h-[124px] rounded-[8.66px] relative">
+        <div className="product-image overflow-hidden h-[99px] w-[99px] lg:w-[124px] lg:h-[124px] rounded-[8.66px] relative">
           <Image
             src={image}
             alt="Product-image"

@@ -43,8 +43,8 @@ const productsCardData = [
 const TopSelling = () => {
   return (
     <>
-      <div className="section w-[390px] lg:px-[100px] lg:w-[1240px] bg-white relative z-20">
-        <div className="heading integralCF w-[390px] h-[38px] font-bold mt-20 text-[32px] leading-[38.4px] lg:mt-0 lg:text-5xl lg:leading-[57.6px] lg:w-[1440px] lg:h-[58px] flex items-center justify-center relative z-20 mb-[55px]">
+      <div className="section w-[390px] lg:px-[100px] lg:w-[1240px] bg-white relative mt-10 z-20">
+        <div className="heading integralCF w-[390px] h-[38px] font-bold  text-[32px] leading-[38.4px] lg:mt-0 lg:text-5xl lg:leading-[57.6px] lg:w-[1440px] lg:h-[58px] flex items-center justify-center relative z-20 mb-[55px]">
           <h1 className="w-[231px] h-[38px] lg:w-[403px] lg:h-[58px]">
             TOP SELLING
           </h1>

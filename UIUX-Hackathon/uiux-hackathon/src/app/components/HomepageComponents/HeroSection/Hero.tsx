@@ -9,10 +9,10 @@ const Hero = () => {
     <>
       <div className="w-[390px] h-[853px] lg:w-[1440px] lg:h-[663px] bg-[#F2F0F1] flex flex-col lg:flex-row lg:justify-center lg:items-center">
         <div className="text-section w-[390px] lg:w-[620px] flex flex-col items-center lg:items-start gap-5 px-4 lg:px-0 lg:gap-8 mt-10">
-          <h1 className="font-bold w-[358px] h-[93px] text-4xl leading-[34px] lg:w-[577px] lg:h-[173px] lg:leading-[64px] lg:text-[64px] integralCF">
+          <h1 className="font-bold w-[358px] h-[100px] text-4xl leading-[34px] lg:w-[577px] lg:h-[173px] lg:leading-[64px] lg:text-[64px] integralCF">
             FIND CLOTHES THAT MATCHES YOUR STYLE
           </h1>
-          <p className="w-[358px] h-[50px] text-sm leading-[20px] lg:text-base  lg:w-[545px] lg:h-[33px] lg:leading-[22px] text-[#00000099] satoshi">
+          <p className="w-[358px] h-[50px] text-sm leading-[18px] lg:text-base  lg:w-[545px] lg:h-[33px] lg:leading-[22px] text-[#00000099] satoshi">
             Browse through our diverse range of meticulously crafted garments
             designed to bring out your individuality and cater to your sense of
             style.
@@ -37,7 +37,7 @@ const Hero = () => {
               className="w-[44px] h-[44px] lg:w-[56px] lg:h-[56px]"
             ></Image>
           </div>
-          <div className="models absolute z-0">
+          <div className="models overflow-hidden absolute z-0">
             <Image
               src={modelsImage}
               alt="2 Models wearing brands clothes"
