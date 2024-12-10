@@ -7,7 +7,7 @@ import calvinKleinLogo from "@/app/images/HomePageImages/BannerImages/calvinKlei
 const Banner = () => {
   return (
     <>
-      <div className="bg-white h-[194px] w-[1440px] relative z-20">
+      <div className="bg-white w-[390px] h-[194px] lg:w-[1440px] relative z-20">
         <div className="w-[390px] h-[146px] lg:w-[1440px] lg:h-[122px] bg-black text-white flex justify-evenly lg:flex-none flex-wrap items-center relative z-30">
           <div className="logo">
             <Image
