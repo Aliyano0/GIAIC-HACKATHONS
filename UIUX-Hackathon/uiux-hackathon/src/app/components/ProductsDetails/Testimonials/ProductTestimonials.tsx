@@ -11,46 +11,46 @@ const customerReviews = [
   {
     id: 2,
     name: "Alex M..",
-    paragraph: `"Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly...."`,
+    paragraph: `"The t-shirt exceeded my expectations! The colors are vibrant and the print quality is top-notch. Being a UI/UX designer myself, I'm quite picky about aesthetics, and this t-shirt definitely gets a thumbs up from me."`,
     datePosted: "Posted on August 15, 2023",
   },
   {
     id: 3,
     name: "Ethan R.",
-    paragraph: `"This t-shirt is a must-have for anyone who appreciates good design. The minimalistic yet stylish pattern caught my eye, and the fit is perfect...."`,
+    paragraph: `"This t-shirt is a must-have for anyone who appreciates good design. The minimalistic yet stylish pattern caught my eye, and the fit is perfect. I can see the designer's touch in every aspect of this shirt."`,
     datePosted: "Posted on August 16, 2023",
   },
   {
-    id: 4,
-    name: "James L.",
-    paragraph: `"As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.”`,
+    id: 22,
+    name: "Olivia P.",
+    paragraph: `"As a UI/UX enthusiast, I value simplicity and functionality. This t-shirt not only represents those principles but also feels great to wear. It's evident that the designer poured their creativity into making this t-shirt stand out."`,
     datePosted: "Posted on August 17, 2023",
   },
   {
-    id: 22,
-    name: "Moore",
-    paragraph: `"I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations."`,
+    id: 4,
+    name: "Liam K.",
+    paragraph: `"This t-shirt is a fusion of comfort and creativity. The fabric is soft, and the design speaks volumes about the designer's skill. It's like wearing a piece of art that reflects my passion for both design and fashion."`,
     datePosted: "Posted on August 18, 2023",
   },
   {
     id: 33,
-    name: "Moore",
-    paragraph: `"I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations."`,
+    name: "Ava H.",
+    paragraph: `"I'm not just wearing a t-shirt; I'm wearing a piece of design philosophy. The intricate details and thoughtful layout of the design make this shirt a conversation starter."`,
     datePosted: "Posted on August 19, 2023",
   },
 ];
 
 const ProductTestimonials = () => {
   return (
-    <div className="w-[358px] mx-[16px] mt-[50px] lg:mt-0 lg:w-[1240px] lg:mx-[100px]">
-      <div className="testimonials-nav w-[1240px] flex space-x-3 gap-[45px]">
-        <p className="w-[107px] h-[11px] leading-[22px] text-[#00000099] lg:w-[413px] lg:h-[14px] lg:text-[20px] text-center cursor-pointer">
+    <div className="w-[358px] mx-4 mt-[50px] lg:mt-0 lg:w-[1240px] lg:mx-[100px]">
+      <div className="testimonials-nav w-[358px] lg:w-[1240px] flex gap-[45px] leading-[22px] text-base lg:text-[20px] text-[#00000099]">
+        <p className="w-[107px] h-[11px] lg:w-[413px] lg:h-[14px] text-center cursor-pointer">
           Product Details
         </p>
-        <p className="w-[123px] pb-[38px] h-[12px] leading-[22px] text-black border-b-[2px] border-b-black lg:w-[413px] lg:h-[14px] font-medium lg:text-[20px] text-center cursor-pointer">
+        <p className="w-[123px] pb-[38px] h-[12px] text-black border-b-[2px] border-b-black lg:w-[413px] lg:h-[14px] font-medium text-center cursor-pointer">
           Rating & Reviews
         </p>
-        <p className="w-[38px] h-[11px] leading-[22px] text-[#00000099] text-center lg:w-[413px] lg:h-[14px] lg:text-[20px] cursor-pointer">
+        <p className="w-[38px] h-[11px] text-center lg:w-[413px] lg:h-[14px] cursor-pointer">
           FAQs
         </p>
       </div>

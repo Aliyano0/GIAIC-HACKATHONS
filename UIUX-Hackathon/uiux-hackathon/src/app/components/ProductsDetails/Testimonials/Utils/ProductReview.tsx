@@ -29,7 +29,7 @@ const ProductReview = ({ name, paragraph, datePosted }: IProductReviews) => {
               ✔
             </span>
           </h3>
-          <p className="text-[#00000099] text-sm lg:text-base lg:leading-[22px]">
+          <p className="text-[#00000099] text-sm lg:text-base lg:leading-[22px] h-20 lg:h-auto line-clamp-4 lg:line-clamp-none">
             {paragraph}
           </p>
           <p className="datePosted lg:mt-5 lg:w-[546px] lg:text-base w-[171px] h-[22px] text-sm leading-[22px] font-medium text-[#00000099]">
