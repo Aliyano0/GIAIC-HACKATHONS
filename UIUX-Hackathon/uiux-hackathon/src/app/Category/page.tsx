@@ -18,9 +18,9 @@ const Category = () => {
         <span>Casual</span>
         <button
           onClick={handleClick}
-          className="enable-filter-btn ml-[88px] h-8 px-3 py-3 bg-black rounded-[62px] flex items-center justify-center text-[#fff] lg:hidden leading-3"
+          className="enable-filter-btn ml-[85px] h-8 px-3 py-3 bg-black rounded-[62px] flex items-center justify-center text-[#fff] lg:hidden leading-3"
         >
-          Enable Filters Container
+          {isOpen ? "Disable Filters Container" : "Enable Filters Container"}
         </button>
       </div>
       <div className="container lg:w-[1240px] flex gap-5 lg:mx-[100px] mb-[50px] lg:mb-0">
