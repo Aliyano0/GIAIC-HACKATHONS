@@ -2,9 +2,9 @@ import Options from "./Utils/Options";
 import Size from "./Utils/Size";
 import ColorCircle from "./Utils/ColorCircle";
 import { RxMixerVertical, RxCross1 } from "react-icons/rx";
-
 import Line from "./Utils/Line";
 import FilterHeader from "./Utils/FilterHeader";
+import Button from "../../Buttons/Button";
 
 const filterOptions = [
   {
@@ -133,8 +133,8 @@ const styles = [
 const Filters = () => {
   return (
     <>
-      <div className="w-[390px] h-[1066px] rounded-t-[20px] lg:w-[295px] lg:h-[1220px] lg:rounded-[20px] border-[1px] flex flex-col gap-5 px-[19px] py-5 lg:gap-6 border-[#0000001a] lg:py-5 lg:px-6">
-        <div className="header w-[353px] lg:w-[247px] h-[27px] flex justify-between items-center">
+      <div className="w-full h-[1066px] md:h-auto rounded-t-[20px] xl:min-w-[295px] lg:h-[1220px] lg:rounded-[20px] border-[1px] flex flex-col gap-5 px-[19px] py-5 lg:gap-6 border-[#0000001a] md:px-3 lg:py-5 lg:px-6">
+        <div className="header w-full h-[27px] flex justify-between items-center">
           <h4 className="w-[57px] h-[27px] font-bold text-xl leading-[27px]">
             Filter
           </h4>
@@ -146,18 +146,18 @@ const Filters = () => {
           </div>
         </div>
         <Line />
-        <div className="options w-[353px] lg:w-[247px] h-[160px] flex flex-col gap-5">
+        <div className="options w-full h-[160px] flex flex-col gap-5">
           {filterOptions.map((elem) => {
             return <Options key={elem.id} options={elem.optionName} />;
           })}
         </div>
         <Line />
-        <div className="price-filter w-[247px] h-[90px] flex flex-col justify-between">
+        <div className="price-filter w-full h-[90px] flex flex-col justify-between">
           <FilterHeader headingName="Price" />
-          <div className="price-filter w-[353px] lg:w-[247px] h-[43px] mt-4 lg:mt-5">
-            <div className="filter w-[353px] lg:w-[247px] h-5 flex items-center justify-center">
+          <div className="price-filter w-full h-[43px] mt-4 lg:mt-5">
+            <div className="filter w-full h-5 flex items-center justify-center">
               <div className="circle w-5 h-5 rounded-full bg-black"></div>
-              <div className="connecting-line w-[250px] lg:w-[145px] h-[6px] bg-black"></div>
+              <div className="connecting-line w-[250px] md:w-[70%] xl:w-[145px] h-[6px] bg-black"></div>
               <div className="circle w-5 h-5 rounded-full bg-black"></div>
             </div>
             <div className="filter-price mt-2 mx-[31px] lg:w-[194px] flex justify-between items-center">
@@ -167,15 +167,15 @@ const Filters = () => {
           </div>
         </div>
         <Line />
-        <div className="colors-filter w-[353px] lg:w-[247px] h-[137px]">
+        <div className="colors-filter w-full h-[137px]">
           <FilterHeader headingName="Colors" />
-          <div className="colors w-[353px] lg:w-[247px] h-[90px] flex flex-col gap-4 items-center lg:items-start mt-4 lg:mt-5">
-            <div className="rowOne w-[247px] h-[37px] flex justify-between">
+          <div className="colors w-[97%] h-[90px] flex flex-col gap-4 items-center lg:items-start mt-4 lg:mt-5">
+            <div className="rowOne w-full h-[37px] flex justify-between">
               {rowOneColors.map((elem) => {
                 return <ColorCircle key={elem.id} colorClass={elem.color} />;
               })}
             </div>
-            <div className="rowTwo w-[247px] h-[37px] flex justify-between">
+            <div className="rowTwo w-full h-[37px] flex justify-between">
               {rowTwoColors.map((elem) => {
                 return (
                   <ColorCircle
@@ -189,26 +189,32 @@ const Filters = () => {
           </div>
         </div>
         <Line />
-        <div className="size-filters w-[247px] h-[274px]">
+        <div className="size-filters w-[97%] h-[274px]">
           <FilterHeader headingName="Size" />
-          <div className="sizes w-[353px] h-[133px] lg:w-[247px] lg:h-[227px] flex gap-2 flex-wrap mt-4 lg:mt-5">
+          <div className="sizes w-full md:h-auto h-[133px] lg:w-[97%] lg:h-[227px] flex gap-2 flex-wrap mt-4 lg:mt-5">
             {sizes.map((elem) => {
               return <Size key={elem.id} text={elem.text} black={elem.black} />;
             })}
           </div>
         </div>
         <Line />
-        <div className="dress-style w-[353px] lg:w-[247px] lg:h-[171px]">
+        <div className="dress-style w-full lg:h-[171px]">
           <FilterHeader headingName="Dress Style" />
-          <div className="styles w-[247px] h-[124px] flex flex-col gap-5 mt-4 lg:mt-5">
+          <div className="styles w-[98%] h-[124px] flex flex-col gap-5 mt-4 lg:mt-5">
             {styles.map((elem) => {
               return <Options key={elem.id} options={elem.optionName} />;
             })}
           </div>
         </div>
-        <button className="w-[353px] lg:w-[247px] h-12 rounded-[62px] py-4 px-[54px] bg-black text-white text-sm leading-[18.9px] font-medium">
-          Apply Filter
-        </button>
+        <Button
+          arrowIcon={false}
+          btnText="Apply Filter"
+          small={false}
+          large={true}
+          fontWeight="font-medium text-sm md:text-xs lg:text-sm"
+          height="h-12"
+          width="lg:w-[247px] w-full"
+        />
       </div>
     </>
   );

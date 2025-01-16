@@ -8,13 +8,15 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      screens: {
+        "2xl": "1440px",
+        "lg840": "840px",
+        "xs": "480px",
+        "xxs": "390px",
       },
     },
   },
   plugins: [
-    require('@tailwindcss/line-clamp'),
+
   ],
 } satisfies Config;

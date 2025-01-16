@@ -42,22 +42,22 @@ const customerReviews = [
 
 const ProductTestimonials = () => {
   return (
-    <div className="w-[358px] mx-4 mt-[50px] lg:mt-0 lg:w-[1240px] lg:mx-[100px]">
-      <div className="testimonials-nav w-[358px] lg:w-[1240px] flex gap-[45px] leading-[22px] text-base lg:text-[20px] text-[#00000099]">
-        <p className="w-[107px] h-[11px] lg:w-[413px] lg:h-[14px] text-center cursor-pointer">
+    <div className="w-full xs:px-5 xl:px-0  lg:mx-0 xl:mx-auto mt-[50px] lg:mt-0 xl:max-w-[1240px]">
+      <div className="testimonials-nav w-full flex justify-between xl:justify-normal xl:gap-[45px] leading-[22px] text-sm xs:text-base lg:text-[20px] text-[#00000099]">
+        <p className="h-[11px] w-[31.5%] xl:w-[413px] lg:h-[14px] text-center cursor-pointer">
           Product Details
         </p>
-        <p className="w-[123px] pb-[38px] h-[12px] text-black border-b-[2px] border-b-black lg:w-[413px] lg:h-[14px] font-medium text-center cursor-pointer">
+        <p className=" pb-[38px] h-[12px] text-black border-b-[2px] border-b-black w-[31.5%] xl:w-[413px] lg:h-[14px] font-medium text-center cursor-pointer">
           Rating & Reviews
         </p>
-        <p className="w-[38px] h-[11px] text-center lg:w-[413px] lg:h-[14px] cursor-pointer">
+        <p className=" h-[11px] text-center w-[31.5%] xl:w-[413px] lg:h-[14px] cursor-pointer">
           FAQs
         </p>
       </div>
 
-      <div className="line w-[358px] lg:w-[1240px] h-[1px] bg-[#0000001a]"></div>
+      <div className="line w-[95%] mx-auto h-[1px] bg-[#0000001a]"></div>
 
-      <div className="header flex items-center justify-between w-[358px] my-[20px] lg:w-[1240px]">
+      <div className="header xs:min-w-0 min-w-[320px] w-[90%] mx-auto xs:mx-0 flex items-center justify-between xs:w-full my-[20px] md:px-5 xl:px-0 xl:mx-auto xl:max-w-[1240px]">
         <div className="heading-text flex items-center gap-2 h-[27px] jus">
           <h5 className="w-[104px] h-[27px] font-bold text-xl leading-[27px] lg:w-[125px] lg:h-8 lg:text-2xl lg:leading-[32.4px] ">
             All Reviews
@@ -76,12 +76,12 @@ const ProductTestimonials = () => {
               <FaAngleDown />
             </span>
           </div>
-          <button className="w-[113px] h-10 rounded-[62px] px-4 py-3 font-medium text-xs leading-[16.2px] bg-black text-white lg:w-[166px] lg:h-12 lg:px-4 lg:py-5">
+          <button className="w-[113px] rounded-[62px] px-4 py-3 font-medium text-xs leading-[16.2px] bg-black text-white xs:w-[166px] xs:py-5">
             Write a Review
           </button>
         </div>
       </div>
-      <div className="reviews w-[358px] h-[705px] overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-4 lg:w-[1240px] lg:h-[770px] lg:gap-5">
+      <div className="reviews xs:min-w-0 min-w-[320px] w-[90%] mx-auto xs:mx-0 xs:w-full xs:h-[230px] overflow-clip sm:overflow-visible sm:h-[740px] md:h-[705px] grid grid-cols-1 md:px-5 xl:px-0 sm:grid-cols-2 gap-3 md:gap-4 xl:w-[1240px] lg:h-[850px] xl:h-[770px] lg:gap-5">
         {customerReviews.map((elem) => {
           return (
             <ProductReview
@@ -94,7 +94,7 @@ const ProductTestimonials = () => {
         })}
       </div>
       <div className="load-more-btn flex justify-center items-center">
-        <button className="mt-5 lg:mt-9 w-[195px] h-[47px] rounded-[62px] border-[1px] border-[#0000001a] py-[14px] px-9 text-sm leading-[18.9px] lg:w-[230px] lg:h-[52px] lg:text-base lg:leading-[21.6px]">
+        <button className="mt-5 lg:mt-9 w-[195px] h-[47px] rounded-[62px] border-[1px] border-[#0000001a] py-[14px] px-9 text-sm leading-[18.9px] sm:w-[230px] sm:h-[52px] sm:text-base lg:leading-[21.6px]">
           Load More Reviews
         </button>
       </div>

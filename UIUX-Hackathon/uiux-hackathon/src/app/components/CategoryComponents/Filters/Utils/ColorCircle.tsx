@@ -8,7 +8,7 @@ interface ICircleColor {
 const ColorCircle = ({ colorClass, tick = false }: ICircleColor) => {
   return (
     <div
-      className={`w-[37px] h-[37px] border-[2px] border-[#00000033] ${colorClass} flex items-center justify-center rounded-full text-white font-medium`}
+      className={`w-[37px] h-[37px] md:w-[28px] md:h-[28px] lg:w-[37px] lg:h-[37px] border-[2px] border-[#00000033] ${colorClass} flex items-center justify-center rounded-full text-white font-medium`}
     >
       {tick && <FaCheck />}
     </div>

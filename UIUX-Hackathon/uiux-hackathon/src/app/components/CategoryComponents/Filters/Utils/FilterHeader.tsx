@@ -4,7 +4,7 @@ interface IFilterHeader {
 }
 const FilterHeader = ({ headingName }: IFilterHeader) => {
   return (
-    <div className="header w-[353px] lg:w-[247px] h-[27px] flex justify-between items-center">
+    <div className="header w-full h-[27px] flex justify-between items-center">
       <h4 className="h-[27px] font-bold text-xl leading-[27px]">
         {headingName}
       </h4>

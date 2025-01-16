@@ -1,9 +1,10 @@
+import StarRating from "@/app/components/StarRatings";
 import Image, { StaticImageData } from "next/image";
 
 export interface IClothesCard {
   productPicture: StaticImageData;
   productName: string;
-  productRating: StaticImageData;
+  productRating: number;
   productPrice: string;
   discountedPrice?: string | null;
   discountPercentage?: string | null;
@@ -19,23 +20,21 @@ const ClothesCard = ({
 }: IClothesCard) => {
   return (
     <>
-      <div className="card w-[198px] lg:h-[376px] lg:w-[295px]">
-        <div className="clothes-image w-[198px] h-[200.1px] lg:w-[295px] lg:h-[298px] relative z-10 bg-white overflow-hidden">
+      <div className="Card min-w-[198px] overflow-clip lg:overflow-visible w-[30%] md:min-w-[220px] lg:w-[240px] xl:h-[376px] xl:w-[295px]">
+        <div className="clothes-image w-full h-[200.1px] lg:h-[250px] xl:h-[298px] relative z-10 bg-white overflow-hidden">
           <Image
             src={productPicture}
             alt={productName}
-            className="w-[198.67px] h-[298.01px] top-[-49px] left-[-0.67px] lg:w-[296px] lg:h-[444px] absolute z-0 lg:top-[-73px] lg:left-[-1px]"
+            width={undefined}
+            height={undefined}
+            className="w-full h-[298.01px] top-[-45px] lg:top-[-20px] xl:top-[-71px] xl:left-[-0.67px] xl:w-[296px] xl:h-[444px] absolute z-0 lg:left-[-1px]"
           ></Image>
         </div>
         <div className="text-ratings relative z-10 flex flex-col gap-2">
-          <p className="h-[22px] text-base leading-[21.6px] lg:h-[27px] font-bold lg:text-xl lg:leading-[27px]">
+          <p className="h-[22px] text-base md:text-lg leading-[21.6px] lg:h-[27px] font-bold lg:text-xl lg:leading-[27px]">
             {productName}
           </p>
-          <Image
-            src={productRating}
-            alt="Stars Rating"
-            className="w-[127px] h-4 lg:w-[150px] lg:h-[19px]"
-          ></Image>
+          <StarRating rating={productRating} totalStars={5} />
           <div className="prices flex gap-2 font-bold text-xl leading-[27px] lg:text-2xl lg:leading-[32.4px] lg:gap-3">
             <p className="price">${productPrice}</p>
 

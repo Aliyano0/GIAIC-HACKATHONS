@@ -5,7 +5,7 @@ interface ISize {
 const Size = ({ text, black = false }: ISize) => {
   return (
     <div
-      className={`rounded-[62px] text-sm leading-[18.9px] py-[10px] hover:bg-black hover:text-white px-5 cursor-pointer ${
+      className={`rounded-[62px] text-sm md:text-xs lg:text-sm leading-[18.9px] py-[10px] hover:bg-black hover:text-white px-5 md:px-4 lg:px-5 cursor-pointer ${
         black === true ? "bg-black text-white" : "bg-white text-[#00000099]"
       }`}
     >

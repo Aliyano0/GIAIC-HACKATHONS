@@ -7,14 +7,14 @@ import Testimonials from "./components/HomepageComponents/Testimonial/Testimonal
 
 export default function Home() {
   return (
-    <>
+    <div className="w-full">
       <Hero />
       <Banner />
       <NewArrivals />
-      <div className="line w-[358px] mx-4 h-[1px] text-[#0000001a] lg:w-[1240px] lg:mx-[100px]"></div>
+      <div className="line h-[1px] bg-[#0000001a] w-[95%] mx-auto"></div>
       <TopSelling />
       <Browse />
       <Testimonials />
-    </>
+    </div>
   );
 }

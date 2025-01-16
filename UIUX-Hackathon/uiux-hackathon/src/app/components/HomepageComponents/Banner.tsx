@@ -7,30 +7,30 @@ import calvinKleinLogo from "@/app/images/HomePageImages/BannerImages/calvinKlei
 const Banner = () => {
   return (
     <>
-      <div className="bg-white w-[390px] h-[194px] lg:w-[1440px] relative z-20">
-        <div className="w-[390px] h-[146px] lg:w-[1440px] lg:h-[122px] bg-black text-white flex justify-evenly lg:flex-none flex-wrap items-center relative z-30">
-          <div className="logo">
+      <div className="bg-white w-full h-[194px] relative z-20">
+        <div className="h-[146px] w-full lg:h-[122px] bg-black px-6 justify-between md:px-0 text-white flex md:justify-evenly lg:flex-none flex-wrap items-center relative z-30">
+          <div className="logo pr-3 xs:pr-5">
             <Image
               src={versaceLogo}
               alt="Versace Logo"
               className="w-[116.74px] h-[23.25px] lg:w-[166.48px] lg:h-[33.16px]"
             ></Image>
           </div>
-          <div className="logo">
+          <div className="logo pr-3 xs:pr-5">
             <Image
               src={zaraLogo}
               alt="Zara Logo"
               className="w-[63.81px] h-[26.65px] lg:w-[91px] lg:h-[38px]"
             ></Image>
           </div>
-          <div className="logo">
+          <div className="logo pr-3 xs:pr-5">
             <Image
               src={gucciLogo}
               alt="Gucci Logo"
               className="w-[109.39px] h-[25.24px] lg:w-[156px] lg:h-[36px]"
             ></Image>
           </div>
-          <div className="logo">
+          <div className="logo pr-3 xs:pr-5">
             <Image
               src={pradaLogo}
               alt="Prada Logo"

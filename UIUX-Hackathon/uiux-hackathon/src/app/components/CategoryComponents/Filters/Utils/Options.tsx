@@ -5,7 +5,7 @@ interface IOptions {
 
 const Options = ({ options }: IOptions) => {
   return (
-    <div className="option w-[353px] lg:w-[247px] h-[16px] flex justify-between items-center leading-[21.6px] text-[#00000099]">
+    <div className="option w-full h-[16px] text-base md:text-sm lg:text-base flex justify-between items-center leading-[21.6px] text-[#00000099]">
       <p>{options}</p>
       <span>
         <FaAngleRight />

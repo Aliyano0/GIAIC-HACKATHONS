@@ -18,53 +18,45 @@ const ProductsCart = ({
 }: IProductsCart) => {
   return (
     <>
-      <div className="w-[330px] h-[99px] lg:w-[667px] lg:h-[124px] flex gap-[14px] lg:gap-4">
-        <div className="product-image overflow-hidden h-[99px] w-[99px] lg:w-[124px] lg:h-[124px] rounded-[8.66px] relative">
+      <div className="w-full md:max-w-[667px] lg:h-[124px] flex gap-2 xs:gap-[14px] lg:gap-4">
+        <div className="product-image overflow-hidden h-[99px] min-w-[94px] xs:min-w-[105px] xs:h-[105px] sm:min-w-[120px] sm:h-[120px] lg:w-[124px] lg:h-[124px] rounded-[8.66px] relative">
           <Image
             src={image}
             alt="Product-image"
-            className="w-[99px] h-[149px] absolute top-[-25px] lg:w-[125px] lg:h-[187px] lg:top-[-30.5px] lg:left-[-1px]"
+            className=" h-[149px] w-full xs:h-[160px] absolute top-[-25px] sm:w-full sm:min-w-max-[125px] sm:min-h-[187px] sm:top-[-30.5px] sm:left-[-1px]"
           ></Image>
         </div>
-        <div className="product-info-container w-[217px] h-[99px] flex flex-col justify-between lg:w-[527px] lg:h-[124px] lg:flex-row">
-          <div className="product-text lg:w-[227px] lg:h-[118px] flex flex-col justify-between">
-            <div className="product-info w-[227px] h-[71px] flex flex-col gap-[2px]">
-              <div className="heading w-[217px] flex justify-between lg:w-auto">
-                <h6 className="w-[181px] h-[22px] lg:w-[227px] lg:h-[27px] font-bold text-base leading-[21.6px] lg:text-xl lg:leading-[27px] ">
+        <div className="product-info-container w-full h-[99px] flex flex-col  md:min-w-0 md:max-w-[527px] lg:h-[124px] lg:flex-row">
+          <div className="product-text w-full lg:h-[118px] flex flex-col justify-between">
+            <div className="product-info w-full h-[71px] flex flex-col gap-1 xs:gap-[10px] md:gap-1">
+              <div className="HeadingAndTrashIcon xs:w-[98%] flex justify-between">
+                <h6 className="inline-block sm:max-w-auto truncate xs:overflow-visible h-[22px] xs:w-full lg:max-w-[230px] lg:h-[27px] font-bold text-base xs:text-lg sm:text-xl md:text-base leading-[21.6px] lg:text-xl lg:leading-[27px] ">
                   {productName}
                 </h6>
-                <div className="trash cursor-pointer lg:hidden">
-                  <RiDeleteBin6Fill className="text-[#FF3333] text-[16px]" />
+                <div className="trash cursor-pointer xs:w-auto relative z-20">
+                  <RiDeleteBin6Fill className="text-[#FF3333] text-[16px] xs:text-[20px] md:text-[20px]" />
                 </div>
               </div>
-              <div className="product-size lg:w-[78px] lg:h-[42px] flex flex-col gap-1 text-xs leading-[16.2px] lg:text-sm lg:leading-[18.9px]">
+              <div className="product-size lg:max-w-[78px] md:h-[42px] flex flex-col gap-1 text-xs leading-[16.2px] lg:text-sm lg:leading-[18.9px]">
                 <p className="flex gap-[2px]">
-                  Size: <span className="text-[#00000099]">{size}</span>
+                  Size:{" "}
+                  <span className="text-[#00000099] inline-block">{size}</span>
                 </p>
                 <p className="flex gap-[2px]">
-                  Color: <span className="text-[#00000099]">{color}</span>
+                  Color:{" "}
+                  <span className="text-[#00000099] inline-block">{color}</span>
                 </p>
               </div>
             </div>
-            <div className="flex items-center justify-between">
-              <div className="product-price w-[45px] h-[27px] lg:w-16 lg:h-8 font-bold text-xl leading-[27px] lg:text-2xl lg:leading-[32.4px]">
+            <div className="PriceAndQuantity w-full flex items-center justify-between">
+              <div className="product-price font-bold text-base xs:text-xl leading-[27px] lg:text-2xl lg:leading-[32.4px]">
                 ${price}
               </div>
-              <div className="quantity w-[105px] h-[31px] py-[14px] px-5 gap-5 flex items-center lg:hidden ">
+              <div className="quantity md:max-w-[126px] xs:py-[14px] md:py-3 xs:px-5 gap-5 flex items-center justify-end">
                 <CgMathMinus className="cursor-pointer text-[20px] font-bold" />
                 <p className="text-sm leading-[18.9px] font-medium">1</p>
                 <CgMathPlus className="cursor-pointer text-[20px] font-bold" />
               </div>
-            </div>
-          </div>
-          <div className="product-quantity hidden lg:flex w-[225px] h-[124px] flex-col justify-between items-end">
-            <div className="trash-icon cursor-pointer">
-              <RiDeleteBin6Fill className="text-[#FF3333] text-[20px] " />
-            </div>
-            <div className="items w-[126px] h-[44px] rounded-[62px] px-5 py-3 flex gap-5 items-center font-black text-[20px]">
-              <CgMathMinus className="cursor-pointer" />
-              <p className="text-sm leading-[18.9px] font-medium">1</p>
-              <CgMathPlus className="cursor-pointer" />
             </div>
           </div>
         </div>

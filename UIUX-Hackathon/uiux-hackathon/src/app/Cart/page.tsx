@@ -3,7 +3,7 @@ import whiteT from "@/app/images/CartImages/whiteTshirt.png";
 import checkeredShirt from "@/app/images/HomePageImages/ClothesImages/RedCheckedShirt.png";
 import jeans from "@/app/images/HomePageImages/ClothesImages/BlueJeans.png";
 import { MdOutlineDiscount } from "react-icons/md";
-import { FaArrowRight } from "react-icons/fa6";
+import Button from "../components/Buttons/Button";
 
 const ProductsCartItems = [
   {
@@ -34,22 +34,23 @@ const ProductsCartItems = [
 
 const Cart = () => {
   return (
-    <>
-      <div className="page-pathname mt-10 mx-4 w-[358px] h-[19px] text-sm leading-[18.9] lg:text-base lg:leading-[21.6px] lg:mt-12  flex items-center gap-1 lg:w-[1440px] lg:px-[100px]">
+    <div className="w-full xs:px-4 xl:px-10 2xl:px-[100px] flex flex-col justify-center items-center">
+      <div className="page-pathname  mt-10 w-[90%] mx-auto xs:mx-0 xs:w-full h-[19px] text-sm leading-[18.9] md:text-base md:leading-[21.6px] md:mt-12 flex items-center gap-1">
         <p>
-          <span className="text-[#00000099]">Home</span> <span>&gt;</span>
+          <span className="text-[#00000099] inline-block">Home</span>{" "}
+          <span className="inline-block">&gt;</span>
         </p>
         <p>Cart</p>
       </div>
-      <div className="px-4 w-[358px] mt-2 lg:w-[1440px] lg:my-6 lg:px-[100px]">
-        <div className="heading w-[207px] h-[38px] lg:w-[259px] lg:h-[48px] ">
+      <div className="max-w-[1240px] w-full mt-2 md:my-6">
+        <div className="heading w-[90%] mx-auto xs:mx-0 xs:w-full">
           <h1 className="font-bold text-[32px] leading-[38.4px] lg:text-[40px] lg:leading-[48px] integralCF">
             YOUR CART
           </h1>
         </div>
-        <div className="cart-container w-[358px] h-[800px] lg:w-[1240px] lg:h-[588px] flex flex-col gap-5 mt-5 lg:flex-row lg:mt-6">
+        <div className="cart-container sm:max-w-full xs:w-full xs:h-auto md:mx-0 w-full md:max-w-[1024px] lg:max-w-[1240px] md:h-[500px] lg:h-[588px] flex flex-col gap-5 items-center justify-center xs:justify-normal xs:items-start mt-5 md:flex-row md:mt-6">
           {/* PRODUCTS LIST */}
-          <div className="products-cart-list w-[358px] h-[389px] p-[14px] flex flex-col gap-4 rounded-[20px] border-[1px] border-[#0000001A] lg:w-[715px] lg:h-[508px] lg:py-5 lg:px-6 lg:gap-12">
+          <div className="products-cart-list w-[90%] mx-auto xs:mx-0 min-w-[310px] xs:w-[90%] xs:min-w-[440px] sm:min-w-0 sm:w-full py-3 px-2 xs:p-[14px] md:px-[8px] flex flex-col rounded-[20px] border-[1px] border-[#0000001A] sm:h-auto md:max-w-[48%] md:min-w-[370px] lg:max-w-[715px] md:max-h-[470px] lg:min-w-[580px] lg:max-h-[508px] lg:py-5 lg:px-6 gap-7 sm:gap-10 lg:gap-12">
             {ProductsCartItems.map((elem) => {
               return (
                 <ProductsCart
@@ -64,11 +65,11 @@ const Cart = () => {
             })}
           </div>
           {/* ORDER SUMMARY */}
-          <div className="order-summary w-[358px] h-[390px] flex flex-col p-5 gap-4 rounded-[20px] border-[1px] border[#0000001A] lg:w-[505px] lg:h-[458px]  lg:py-5 lg:px-6  lg:gap-6">
-            <h4 className="font-bold w-[149px] h-[27px] text-xl leading-[27px] lg:text-2xl lg:leading-[32.4px] lg:w-[179px] lg:h-[32px]">
+          <div className="order-summary w-[90%] mx-auto xs:mx-0 min-w-[310px] xs:w-[90%] h-full max-w-[98%] sm:max-w-[60%] flex flex-col p-5 gap-4 sm:h-auto rounded-[20px] border-[1px] border[#0000001A] sm:w-full md:max-w-[48%] xs:min-w-[440px] md:min-w-[340px] lg:min-w-[400px] lg:max-w-[505px] lg:max-h-[458px] md:px-4 lg:py-5 lg:px-6 lg:gap-6">
+            <h4 className="font-bold text-xl leading-[27px] lg:text-2xl lg:leading-[32.4px]">
               Order Summary
             </h4>
-            <div className="total-conatiner w-[318px] h-[173px] lg:w-[457px] lg:h-[193px] flex flex-col gap-5">
+            <div className="total-conatiner w-full max-h-[173px] max-w-[457px] h-full lg:max-h-[193px] flex flex-col gap-5">
               <div className="subtotal text-base leading-[21.6px] lg:text-xl lg:leading-[27px] flex justify-between">
                 <p className="text-[#00000099]">Subtotal</p>
                 <p className="font-bold text-right ">$565</p>
@@ -90,28 +91,43 @@ const Cart = () => {
                 </p>
               </div>
             </div>
-            <div className="promo w-[318px] lg:w-[457px] h-12 flex gap-3">
-              <div className="input-box w-[218px] lg:w-[326px] h-12 rounded-[62px] py-3 px-4 flex gap-[10px] lg:gap-3 items-center">
-                <div className="discount-icon text-[#00000066] text-lg lg:text-xl">
+            <div className="promo w-full h-auto xs:h-12 flex flex-col items-end xs:items-baseline xs:flex-row gap-3">
+              <div className="input-box w-full bg-[#f0f0f0] lg:max-w-[326px] h-12 rounded-[62px] py-3 pl-4 xs:px-4 flex gap-[10px] lg:gap-3 items-center">
+                <div className="discount-icon text-[#00000066] text-base xs:text-lg lg:text-xl">
                   <MdOutlineDiscount />
                 </div>
-                <input type="text" placeholder="Add promo code" />
+                <input
+                  type="text"
+                  placeholder="Add promo code"
+                  className="bg-[#f0f0f0]"
+                />
               </div>
               <div className="apply-btn">
-                <button className="w-[88px] lg:w-[119px] h-12 bg-black rounded-[62px] py-3 px-4 text-sm leading-[18.9px] text-white font-medium lg:text-base lg:leading-[21.6px]">
-                  Apply
-                </button>
+                <Button
+                  btnText="Apply"
+                  arrowIcon={false}
+                  large={false}
+                  small={true}
+                  width="w-[90px] md:[100px] lg:w-[119px]"
+                  height="h-12"
+                  fontWeight="font-medium"
+                />
               </div>
             </div>
             <div className="checkout-btn">
-              <button className="w-[318px] h-[54px] lg:w-[457px] lg:h-[60px] text-sm leading-[18.9px] bg-black rounded-[62px] py-4 px-[54px] text-white font-medium lg:text-base lg:leading-[21.6px] flex gap-3 items-center justify-center">
-                Go to Checkout <FaArrowRight className="text-lg" />
-              </button>
+              <Button
+                btnText="Go to Checkout"
+                arrowIcon={true}
+                large={true}
+                small={false}
+                width="w-full"
+                height="h-[60px]"
+              />
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
