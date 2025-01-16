@@ -2,10 +2,6 @@ import bluePolo from "@/app/images/HomePageImages/ClothesImages/bluePoloShirt.pn
 import whiteTshirt from "@/app/images/HomePageImages/ClothesImages/whiteTshirt.png";
 import brownPolo from "@/app/images/HomePageImages/ClothesImages/brownPoloShirt.png";
 import blackStipesTshirt from "@/app/images/HomePageImages/ClothesImages/blackStripesTshirt.png";
-import rating35 from "@/app/images/HomePageImages/ClothesImages/3.5rating.png";
-import rating4 from "@/app/images/HomePageImages/ClothesImages/rating4.png";
-import rating45 from "@/app/images/HomePageImages/ClothesImages/BlackTRating.png";
-import rating5 from "@/app/images/HomePageImages/ClothesImages/rating5.png";
 import ClothesCard from "../../HomepageComponents/ClothesSection/Utils/ClothesCard";
 
 const productsCardData = [
@@ -13,7 +9,7 @@ const productsCardData = [
     id: 1,
     productPicture: bluePolo,
     productName: "Polo with Contrast Trims",
-    productRating: rating4,
+    productRating: 4,
     productPrice: "212",
     discountedPrice: "242",
     discountPercentage: "-20%",
@@ -22,21 +18,21 @@ const productsCardData = [
     id: 2,
     productPicture: whiteTshirt,
     productName: "Gradient Graphic T-shirt",
-    productRating: rating35,
+    productRating: 3.5,
     productPrice: "145",
   },
   {
     id: 3,
     productPicture: brownPolo,
     productName: "Polo with Tipping Details",
-    productRating: rating45,
+    productRating: 4.5,
     productPrice: "180",
   },
   {
     id: 4,
     productPicture: blackStipesTshirt,
     productName: "Black Striped T-shirt",
-    productRating: rating5,
+    productRating: 5,
     productPrice: "120",
     discountedPrice: "150",
     discountPercentage: "-30%",
