@@ -5,7 +5,7 @@ import blackT from "@/app/images/HomePageImages/ClothesImages/BlackTShirt.png";
 import blueJeans from "@/app/images/HomePageImages/ClothesImages/BlueJeans.png";
 import checkeredShirt from "@/app/images/HomePageImages/ClothesImages/RedCheckedShirt.png";
 import orangeStripedT from "@/app/images/HomePageImages/ClothesImages/OrangeStripedTShirt.png";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 const productsCardData = [
   {
