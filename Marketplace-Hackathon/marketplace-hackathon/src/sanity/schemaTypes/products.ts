@@ -4,8 +4,8 @@ export default {
   type: "document",
   fields: [
     {
-      name: "title",
-      title: "Title",
+      name: "productName",
+      title: "Product Name",
       type: "string",
     },
     {
@@ -13,7 +13,7 @@ export default {
       title: "Slug",
       type: "slug",
       options: {
-        source: "title",
+        source: "productName",
         maxLength: 200,
       },
     },
@@ -30,8 +30,7 @@ export default {
     {
       name: "category",
       title: "Category",
-      type: "reference",
-      to: [{ type: "category" }],
+      type: "string",
     },
     {
       name: "material",

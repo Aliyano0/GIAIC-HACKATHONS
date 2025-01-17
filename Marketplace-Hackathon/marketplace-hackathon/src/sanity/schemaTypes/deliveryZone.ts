@@ -4,13 +4,6 @@ export default {
   type: "document",
   fields: [
     {
-
-      name: "zoneName",
-      title: "Zone Name",
-      type: "string",
-
-    },
-    {
       name: "coverageArea",
       title: "Coverage Area",
       type: "array",
