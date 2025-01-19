@@ -1,75 +1,3 @@
-// export default {
-//   name: "products",
-//   title: "Products",
-//   type: "document",
-//   fields: [
-//     {
-//       name: "name",
-//       title: "Product Name",
-//       type: "string",
-//     },
-//     {
-//       name: "Id",
-//       title: "Product ID",
-//       type: "string"
-//     },
-//     {
-//       name: "slug",
-//       title: "Slug",
-//       type: "slug",
-//       options: {
-//         source: "productName",
-//         maxLength: 200,
-//       },
-//     },
-//     {
-//       name: "description",
-//       title: "Description",
-//       type: "text",
-//     },
-//     {
-//       name: "price",
-//       title: "Price",
-//       type: "number",
-//     },
-//     {
-//       name: "category",
-//       title: "Category",
-//       type: "string",
-//     },
-//     {
-//       name: "material",
-//       title: "Material",
-//       type: "string",
-//     },
-//     {
-//       name: "dimensions",
-//       title: "Dimensions",
-//       type: "string",
-//     },
-//     {
-//       name: "stock",
-//       title: "Stock",
-//       type: "number",
-//     },
-//     {
-//       name: "imageGallery",
-//       title: "Image Gallery",
-//       type: "array",
-//       of: [{ type: "image" }],
-//       options: {
-//         hotspot: true,
-//       },
-//     },
-//     {
-//       name: "tags",
-//       title: "Tags",
-//       type: "array",
-//       of: [{ type: "string" }],
-//     },
-//   ],
-// };
-
 export default {
   name: 'product',
   title: 'Product',
@@ -77,8 +5,16 @@ export default {
   fields: [
     {
       name: 'id',
-      title: 'ID',
+      title: 'Product ID',
       type: 'string',
+    },
+    {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "name",
+      },
     },
     {
       name: 'name',
@@ -88,7 +24,13 @@ export default {
     {
       name: 'imagePath',
       title: 'Image Path',
-      type: 'url',
+      type: 'string',
+    },
+    {
+      name: "imageGallery",
+      title: "Image Gallery",
+      type: "array",
+      of: [{ type: "url" }],
     },
     {
       name: 'price',
@@ -111,6 +53,11 @@ export default {
       type: 'boolean',
     },
     {
+      name: 'rating',
+      title: 'Rating',
+      type: 'number',
+    },
+    {
       name: 'stockLevel',
       title: 'Stock Level',
       type: 'number',
@@ -119,6 +66,12 @@ export default {
       name: 'category',
       title: 'Category',
       type: 'string',
+    },
+    {
+      name: "tags",
+      title: "Tags",
+      type: "array",
+      of: [{ type: "string" }],
     },
   ],
 };

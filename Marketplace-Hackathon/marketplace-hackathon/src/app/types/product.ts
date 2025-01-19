@@ -4,7 +4,7 @@ export interface IProduct {
   imagePath: string;
   price: number;
   description: string;
-  productRating?: string;
+  rating: number;
   discountPercentage: string;
   category: string;
   stock: number;

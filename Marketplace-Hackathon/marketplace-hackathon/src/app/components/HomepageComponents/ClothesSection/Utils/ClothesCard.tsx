@@ -1,10 +1,11 @@
 import StarRating from "@/app/components/StarRatings";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 export interface IClothesCard {
   productPicture: string;
   productName: string;
   productCategory: string;
+  productRating: number;
   productPrice: number;
   discountedPrice?: string | null;
   discountPercentage?: string | null;
@@ -13,6 +14,7 @@ export interface IClothesCard {
 const ClothesCard = ({
   productPicture,
   productName,
+  productRating,
   productCategory,
   productPrice,
   discountedPrice = null,
@@ -26,15 +28,15 @@ const ClothesCard = ({
             src={productPicture}
             alt={productName}
             width={550}
-            height={250}
-            className="w-full top-[-45px] lg:top-[-20px] xl:top-[-71px] xl:left-[-0.67px] absolute z-0 lg:left-[-1px]"
+            height={300}
+            className="top-[-45px] lg:top-[-20px] xl:top-[-71px] xl:left-[-0.67px] absolute z-0 lg:left-[-1px] w-full "
           ></Image>
         </div>
         <div className="text-ratings relative z-10 flex flex-col gap-2">
           <p className="h-[22px] text-base md:text-lg leading-[21.6px] lg:h-[27px] font-bold lg:text-xl lg:leading-[27px]">
             {productName}
           </p>
-          <StarRating rating={3} totalStars={5} />
+          <StarRating rating={productRating} totalStars={5} />
           <div className="prices flex gap-2 font-bold text-xl leading-[27px] lg:text-2xl lg:leading-[32.4px] lg:gap-3">
             <p className="price">${productPrice}</p>
 

@@ -8,16 +8,17 @@ const getFeaturedProducts = async () => {
   const featuredProducts = await client.fetch(`
       *[_type == "product" && isFeaturedProduct][0..3] {
   _id,
+  id,
     name,
     imagePath,
-      price,
+    price,
     description,
     category,
     stockLevel,
+    rating,
     isFeaturedProduct,
     discountPercentage,
-}
-`);
+}`);
   return featuredProducts;
 };
 
@@ -42,6 +43,7 @@ const FeaturedProducts = async () => {
                 productName={elem.name}
                 productPrice={elem.price}
                 productCategory={elem.category}
+                productRating={elem.rating}
                 discountPercentage={elem.discountPercentage}
               ></ClothesCard>
               // </Link>

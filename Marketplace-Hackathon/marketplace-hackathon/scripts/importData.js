@@ -1,47 +1,56 @@
 import client from './sanityClient.js';
 
-// async function uploadImageToSanity(imageUrl) {
-//   try {
-//     console.log(`Uploading image: ${imageUrl}`);
+async function uploadImageToSanity(imageUrl) {
+  try {
+    console.log(`Uploading image: ${imageUrl}`);
 
-//     const response = await fetch(imageUrl);
-//     if (!response.ok) {
-//       throw new Error(`Failed to fetch image: ${imageUrl}`);
-//     }
+    const response = await fetch(imageUrl);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch image: ${imageUrl}`);
+    }
 
-//     const buffer = await response.arrayBuffer();
-//     const bufferImage = Buffer.from(buffer);
+    const buffer = await response.arrayBuffer();
+    const bufferImage = Buffer.from(buffer);
 
-//     const asset = await client.assets.upload('image', bufferImage, {
-//       filename: imageUrl.split('/').pop(),
-//     });
+    const asset = await client.assets.upload('image', bufferImage, {
+      filename: imageUrl.split('/').pop(),
+    });
 
-//     console.log(`Image uploaded successfully: ${asset._id}`);
-//     return asset._id;
-//   } catch (error) {
-//     console.error('Failed to upload image:', imageUrl, error);
-//     return null;
-//   }
-// }
+    console.log(`Image uploaded successfully: ${asset._id}`);
+    return asset._id;
+  } catch (error) {
+    console.error('Failed to upload image:', imageUrl, error);
+    return null;
+  }
+}
 
-// async function uploadProduct(product) {
-//   try {
-//     // const imageId = await uploadImageToSanity(product.imageUrl);
+async function uploadProduct(product) {
+  try {
+    const imageId = await uploadImageToSanity(product.imagePath);
 
-//     if ("imageId") {
-//       const document = {
+    if (imageId) {
+      const document = {
+        _type: 'product',
+        id: product.id,
+        name: product.name,
+        imagePath: product.imagePath,
+        price: parseFloat(product.price),
+        description: product.description,
+        discountPercentage: product.discountPercentage,
+        isFeaturedProduct: product.isFeaturedProduct,
+        stockLevel: product.stockLevel,
+        category: product.category,
+      };
 
-//       };
-
-//       const createdProduct = await client.create(document);
-//       console.log(`Product ${product.title} uploaded successfully:`, createdProduct);
-//     } else {
-//       console.log(`Product ${product.title} skipped due to image upload failure.`);
-//     }
-//   } catch (error) {
-//     console.error('Error uploading product:', error);
-//   }
-// }
+      const createdProduct = await client.create(document);
+      console.log(`Product ${product.title} uploaded successfully:`, createdProduct);
+    } else {
+      console.log(`Product ${product.title} skipped due to image upload failure.`);
+    }
+  } catch (error) {
+    console.error('Error uploading product:', error);
+  }
+}
 
 async function importProducts() {
   try {
@@ -54,18 +63,7 @@ async function importProducts() {
     const products = await response.json();
 
     for (const product of products) {
-      await client.create({
-        _type: 'product',
-        id: product.id,
-        name: product.name,
-        imagePath: product.imagePath,
-        price: parseFloat(product.price),
-        description: product.description,
-        discountPercentage: product.discountPercentage,
-        isFeaturedProduct: product.isFeaturedProduct,
-        stockLevel: product.stockLevel,
-        category: product.category,
-      });
+      await uploadProduct(product);
     }
   } catch (error) {
     console.error('Error fetching products:', error);
