@@ -35,7 +35,7 @@ export default {
               name: "productName",
               title: "Product Name",
               type: "reference",
-              to: [{ type: "products" }]
+              to: [{ type: "product" }]
             },
             {
               name: "quantity",

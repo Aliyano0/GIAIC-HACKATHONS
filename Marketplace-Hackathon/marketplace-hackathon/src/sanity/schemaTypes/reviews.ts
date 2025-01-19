@@ -9,7 +9,7 @@ export default {
       name: "product",
       title: "Product",
       type: "reference",
-      to: [{ type: "products" }],
+      to: [{ type: "product" }],
     },
     {
       name: "author",

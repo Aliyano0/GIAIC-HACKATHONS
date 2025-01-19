@@ -5,7 +5,7 @@ export default {
   type: "document",
   fields: [
     {
-      name: "orderId",
+      name: "Id",
       title: "Order ID",
       type: "string"
     },
@@ -27,7 +27,7 @@ export default {
               name: "product",
               title: "Product",
               type: "reference",
-              to: [{ type: "products" }]
+              to: [{ type: "product" }]
             },
 
             {

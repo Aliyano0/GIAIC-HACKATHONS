@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer/Footer";
+import FooterWrapper from "./components/Footer/FooterWrapper";
+import NavbarWrapper from "./components/NavbarWrapper";
 
 // LOCAL FONTS //
 const Satoshi = localFont({
@@ -31,9 +31,9 @@ export default function RootLayout({
       <body
         className={`${Satoshi.variable} ${integralCF.variable} antialiased`}
       >
-        <Navbar />
+        <NavbarWrapper />
         {children}
-        <Footer />
+        <FooterWrapper />
       </body>
     </html>
   );
