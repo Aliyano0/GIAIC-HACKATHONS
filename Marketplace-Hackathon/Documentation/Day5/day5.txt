@@ -1,0 +1,7 @@
+Debugging and Testing Report - TIMELESS TIMBER MARKETPLACE.
+
+
+Fixed Pagination unlimited Addition and subtraction of slug 
+
+Testing:
+  Tested

@@ -1,3 +1,4 @@
+import { title } from "process";
 
 export default {
   name: "order",
@@ -5,7 +6,7 @@ export default {
   type: "document",
   fields: [
     {
-      name: "Id",
+      name: "orderid",
       title: "Order ID",
       type: "string"
     },
@@ -14,6 +15,26 @@ export default {
       title: "Customer Info",
       type: "reference",
       to: [{ type: "customers" }],
+    },
+    {
+      name: "clerkUserId",
+      title: "Store User ID",
+      type: "string",
+    },
+    {
+      name: "stripeCustomerId",
+      title: "Stripe Customer ID",
+      type: "string",
+    },
+    {
+      name: "stripeCheckoutSessionId",
+      title: "Stripe Checkout Session ID",
+      type: "string",
+    },
+    {
+      name: "stripePaymentIntentId",
+      title: "Stripe Payment Intent ID",
+      type: "string",
     },
     {
       name: "products",
@@ -25,14 +46,14 @@ export default {
           fields: [
             {
               name: "product",
-              title: "Product",
+              title: "Product Bought",
               type: "reference",
               to: [{ type: "product" }]
             },
 
             {
               name: "quantity",
-              title: "Quantity",
+              title: "Quantity Purchased",
               type: "number"
             },
           ],
@@ -45,16 +66,22 @@ export default {
       type: "number",
     },
     {
+      name: "discountAmount",
+      title: "Discount Amount",
+      type: "number"
+    },
+    {
       name: "orderDate",
       title: "Order Date",
       type: "datetime",
     },
     {
-      name: "status",
-      title: "Status",
+      name: "orderStatus",
+      title: "Order Status",
       type: "string",
       options: {
-        list: ["Pending", "Shipped", "Delivered", "Cancelled"],
+        list: [
+          { title: "Pending", value: "pending" }, { title: "Shipped", value: "shipped" }, { title: "Delivered", value: "delivered" }, { title: "Cancelled", value: "cancelled" }],
       },
     },
   ],
