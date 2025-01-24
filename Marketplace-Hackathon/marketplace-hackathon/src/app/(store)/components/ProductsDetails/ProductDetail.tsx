@@ -2,7 +2,7 @@ import Image from "next/image";
 import { IProduct } from "@/app/(store)/types/product";
 import { client } from "@/sanity/lib/client";
 import StarRating from "../StarRatings";
-import AddToCartButton from "./Utils/AddToCartButton";
+import AddToCartButton from "./AddToCartButton";
 
 const getProductData = async (slug: string) => {
   const productData: [] = await client.fetch(`
@@ -25,39 +25,45 @@ const ProductDetail = async ({ productSlug }: { productSlug: string }) => {
   const productData: IProduct[] = rawProductData.map((elem: IProduct) => elem);
 
   return (
-    <div className="Container mb-5 mt-5 w-full xs:px-5 xl:px-0 xl:mx-auto xl:max-w-[1440px] md:my-9 flex flex-col sm:flex-row gap-5 lg:gap-0">
+    <div className="Container mb-5 md:mt-5 w-full xs:px-5 2xl:mx-auto 2xl:max-w-[1440px] md:my-9 flex flex-col md:flex-row gap-5 lg:gap-0">
       {/* Image Section */}
-      <div className="min-w-[320px] w-[90%] xs:min-w-0 mt-5 md:mt-0 xs:w-[440px] mx-auto xs:mx-0 sm:w-[260px] md:w-[300px] lg:w-auto flex xl:flex-row flex-col lg:mr-8 xl:mr-10 ">
-        {/* <div className="thumbnails mt-2 xl:mt-0 mb-5 lg:mb-0 md: lg:w-[366px] xl:w-[152px] flex xl:flex-col gap-[14px] lg:order-0">
+      <div className="min-w-[320px] w-[90%] xs:min-w-0 mt-5 md:mt-0 xs:w-[440px] mx-auto xs:mx-0 sm:min-w-[600px] sm:w-[600px] md:min-w-[420px] md:w-[500px] lg:w-auto flex lg:flex-row flex-col  lg:mr-8 xl:mr-10">
+        <div className="thumbnails lg:pt-4 lg:mr-3 mt-2 xl:mt-0 mb-5 lg:mb-0 w-full lg:w-[152px] flex lg:flex-col gap-[14px] lg:order-0">
           <Image
-            src={mainImage}
+            src={productData[0].imagePath}
             alt="T-Shirt Thumbnail 1"
-            className="w-[111px] h-[106px] sm:h-[90px] md:h-[100px] lg:w-1/3 xl:w-[152px] xl:h-[167px] rounded-[20px] object-cover border-[1px] border-[#000000] cursor-pointer"
+            width={150}
+            height={120}
+            className="w-[100px] xxs:w-[111px] xxs:h-[106px] sm:h-[90px] md:h-[100px] md:w-1/3 lg:w-[152px] rounded-[20px] object-cover border-[1px] border-[#000000] cursor-pointer"
           />
           <Image
-            src={thumbnailTwo}
+            src={productData[0].imagePath}
             alt="T-Shirt Thumbnail 2"
-            className="w-[112px] h-[106px] sm:h-[90px] md:h-[100px] lg:w-1/3 xl:w-[152px] xl:h-[168px] rounded-[20px] object-cover border-[1px] border-[#00000018] cursor-pointer"
+            width={150}
+            height={120}
+            className="w-[100px]  xxs:w-[112px] xxs:h-[106px] sm:h-[90px] md:h-[100px] md:w-1/3 lg:w-[152px]  rounded-[20px] object-cover border-[1px] border-[#00000018] cursor-pointer"
           />
           <Image
-            src={thumbnailThree}
+            src={productData[0].imagePath}
             alt="T-Shirt Thumbnail 3"
-            className="w-[111px] h-[106px] sm:h-[90px] md:h-[100px] lg:w-1/3 xl:w-[152px] xl:h-[167px] rounded-[20px]  border-[1px] object-cover border-[#00000018] cursor-pointer"
+            width={150}
+            height={120}
+            className="w-[100px] xxs:w-[111px] xxs:h-[106px] sm:h-[90px] md:h-[100px] md:w-1/3 lg:w-[152px] rounded-[20px]  border-[1px] object-cover border-[#00000018] cursor-pointer"
           />
-        </div> */}
-        <div className="main-image w-full h-[310px] xs:h-[390px] xs:w-[440px] mx-auto sm:h-[290px] sm:mx-0 sm:w-[260px] md:w-[300px] lg:w-auto xl:w-[900px] lg:h-[400px] xl:h-[470px] relative rounded-[20px] mb-3 lg:mb-0 order-[-1] xl:order-1 xl:ml-[14px]">
+        </div>
+        <div className="main-image w-full h-[310px] xs:h-[390px] mx-auto sm:mx-0 md:h-[300px] sm:h-[400px] sm:w-[500px] md:w-full lg:w-[600px] xl:w-[700px] lg:h-[400px] xl:h-[470px] relative rounded-[20px] mb-3 overflow-hidden lg:mb-0 order-[-1] lg:order-1 xl:ml-[14px]">
           <Image
             src={productData[0].imagePath}
             width={900}
             height={530}
             alt={productData[0].name}
-            className="w-full h-full object-contain absolute top-0 rounded-lg"
+            className="w-full h-full object-contain absolute top-0 rounded-[15px]"
           />
         </div>
       </div>
       {/* Product Details Section */}
-      <div className="product-details min-w-[320px] w-[90%] sm:mt-5 md:mt-0 xs:min-w-0 xs:w-[440px] mx-auto xs:mx-0  sm:w-[56%]  sm:min-w-0 lg:order-2 lg:h-[530px] lg:w-[600px] flex flex-col gap-3 lg:gap-[14px] h-[300px]">
-        <h1 className="sm:w-auto leading-[28px] text-2xl xs:text-[28px] lg:w-[600px] md:text-[32px] lg:text-[40px] lg:leading-[48px] font-bold integralCF">
+      <div className="product-details min-w-[320px] w-[90%] sm:mt-5 md:mt-0 xs:min-w-0 xs:w-[440px] mx-auto xs:mx-0  sm:w-[56%]  sm:min-w-0 lg:order-2 md:h-[530px] md:w-auto flex flex-col gap-3 lg:gap-[14px] h-[300px]">
+        <h1 className="sm:w-auto leading-[28px] text-2xl xs:text-[28px] md:text-[32px] lg:text-[40px] lg:leading-[48px] font-bold integralCF">
           {productData[0].name}
         </h1>
         <StarRating rating={productData[0].rating} />
@@ -85,7 +91,7 @@ const ProductDetail = async ({ productSlug }: { productSlug: string }) => {
             ""
           )}
         </div>
-        <p className="text-[#00000099] w-[80%] text-[13px] xs:text-sm lg:w-[590px] md:text-base lg:leading-[22px]">
+        <p className="text-[#00000099] w-[90%] text-[13px] xs:text-sm md:text-base lg:leading-[22px]">
           {productData[0].description}
         </p>
         <div className="line w-[98%] mx-auto h-[1px] bg-[#0000001a]"></div>
@@ -99,7 +105,7 @@ const ProductDetail = async ({ productSlug }: { productSlug: string }) => {
         <div className="line w-[98%] mx-auto h-[1px] bg-[#0000001a]"></div>
 
         {/* Add to Cart Button */}
-        <div className="self-end mt-[11rem]">
+        <div className="self-end w-full md:mt-[11rem]">
           <AddToCartButton cartProduct={productData[0]} />
         </div>
       </div>

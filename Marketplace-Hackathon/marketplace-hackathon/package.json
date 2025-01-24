@@ -11,6 +11,7 @@
   "dependencies": {
     "@clerk/nextjs": "^6.9.15",
     "@radix-ui/react-accordion": "^1.2.2",
+    "@radix-ui/react-popover": "^1.1.5",
     "@sanity/client": "^6.25.0",
     "@sanity/image-url": "^1.1.0",
     "@sanity/types": "^3.70.0",

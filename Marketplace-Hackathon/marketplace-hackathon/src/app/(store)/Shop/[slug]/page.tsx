@@ -10,16 +10,16 @@ const Shop = async ({ params }: { params: { slug: string } }) => {
       <LineSeparator />
 
       <div className="Container pb-20 w-full xl:mx-auto flex gap-5 mb-[50px] lg:mb-0">
-        <div
+        {/* <div
           className={` bg-white text-black z-50 absolute md:static 
             
            transition-all hidden ease-in duration-150`}
         >
           {/* ${  // ? "block w-full xs:w-[70%] sm:w-1/2 left-0"
               // : "hidden w-0 -left-4 md:w-[28%]  md:block" 
-            } */}
+            } 
           <Filters />
-        </div>
+        </div> */}
 
         <div className="w-full mx-auto md:w-auto">
           <ProductList slug={category} />

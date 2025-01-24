@@ -10,6 +10,7 @@ export interface IProduct {
   category: string;
   slug: { current: string, type: string };
   stockLevel: number;
+  quantity?: number;
 }
 
 
@@ -22,4 +23,6 @@ export interface IProductCard {
   productRating: number;
   productPrice: number;
   discountPercentage?: string;
+  suggestionSection?: boolean;
+
 }

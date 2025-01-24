@@ -1,23 +1,45 @@
 "use client";
-import ProductsCart from "../components/CartComponents/ProductsCart";
+import CartProductCard from "../components/CartComponents/CartProductCard";
 import { MdOutlineDiscount } from "react-icons/md";
 import Button from "../components/Buttons/Button";
 import { useEffect, useState } from "react";
 import { IProduct } from "../types/product";
 import { Skeleton } from "@/components/ui/skeleton";
 
-interface IProductGroup {
-  [key: string]: IProduct;
-}
-
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([{}]);
+  const [cartItems, setCartItems] = useState<IProduct[]>([]);
+  const [subTotalAmount, setSubTotalAmount] = useState(0);
+  const [totalAmount, setTotalAmount] = useState(0);
+  // const [discount, setDiscount] = useState(0);
+  // const [discountPercentage, setDiscountPercentage] = useState(0);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const cartArray = [];
     const cart = JSON.parse(localStorage.getItem("cart") || "{}");
     cartArray.push(cart);
-    setCartItems(cartArray);
-  }, []);
+    const cartArrayItems: IProduct[] = Object.values(cart);
+    setCartItems(cartArrayItems);
+    setLoading(false);
+  }, [cartItems.length]);
+
+  useEffect(() => {
+    let subTotal = 0;
+    let totalDiscount = 0;
+    let totalDiscountPercentage = 0;
+    let total = 0;
+    cartItems.forEach((elem) => {
+      subTotal += elem.quantity ? elem.quantity * elem.price : elem.price;
+      totalDiscountPercentage = elem.quantity
+        ? parseInt(elem.discountPercentage) * elem.quantity
+        : parseInt(elem.discountPercentage);
+      totalDiscount += (subTotal * totalDiscount) / 100;
+      total = subTotal - totalDiscount;
+    });
+    setSubTotalAmount(subTotal);
+    // setDiscountPercentage(totalDiscountPercentage);
+    // setDiscount(totalDiscount);
+    setTotalAmount(total);
+  }, [cartItems.length]);
   return (
     <div className="w-full xs:px-4 xl:px-10 2xl:px-[100px] flex flex-col justify-center items-center">
       <div className="page-pathname  mt-10 w-[90%] mx-auto xs:mx-0 xs:w-full h-[19px] text-sm leading-[18.9] md:text-base md:leading-[21.6px] md:mt-12 flex items-center gap-1">
@@ -33,29 +55,38 @@ const Cart = () => {
             YOUR CART
           </h1>
         </div>
-        <div className="cart-container sm:max-w-full xs:w-full xs:h-auto md:mx-0 w-full md:max-w-[1024px] lg:max-w-[1240px] md:h-[500px] lg:h-[588px] flex flex-col gap-5 items-center justify-center xs:justify-normal xs:items-start mt-5 md:flex-row md:mt-6">
+        <div className="cart-container sm:max-w-full xs:w-full xs:h-auto md:mx-0 w-full md:max-w-[1024px] lg:max-w-[1240px] flex flex-col gap-5 items-center justify-center xs:justify-normal xs:items-start mt-5 md:flex-row md:mt-6">
           {/* PRODUCTS LIST */}
-          <div className="products-cart-list w-[90%] mx-auto xs:mx-0 min-w-[310px] xs:w-[90%] xs:min-w-[440px] sm:min-w-0 sm:w-full py-3 px-2 xs:p-[14px] md:px-[8px] flex flex-col rounded-[20px] border-[1px] border-[#0000001A] sm:h-auto md:max-w-[48%] md:min-w-[370px] lg:max-w-[715px] md:max-h-[470px] lg:min-w-[580px] lg:max-h-[508px] lg:py-5 lg:px-6 gap-7 sm:gap-10 lg:gap-12">
-            {cartItems ?(
-              cartItems.map((productGroup: IProductGroup, index) => {
-              // if (index === 0) return <p>Your cart is empty</p>;
-              return Object.values(productGroup).map((elem: IProduct) => (
-                <ProductsCart
-                  key={elem._id}
-                  image={elem.imagePath}
-                  productName={elem.name}
-                  price={elem.price}
-                  size={elem.description}
-                  color={elem.category}
-                />
-              ));
-              })):(
+          <div className="products-cart-list min-h-[500px] h-auto w-[90%] mx-auto xs:mx-0 min-w-[310px] xs:w-[90%] xs:min-w-[440px] sm:min-w-0 sm:w-full py-3 px-2 xs:p-[14px] md:px-[8px] flex flex-col rounded-[20px] border-[1px] border-[#0000001A] md:max-w-[48%] md:min-w-[370px] lg:max-w-[715px] lg:min-w-[580px] lg:py-5 lg:px-6 gap-7 sm:gap-10 lg:gap-12 shadow-md">
+            {}
+            {loading ? (
+              <div className="flex flex-col gap-4">
                 <div className="w-full flex gap-3">
-                  <Skeleton className="w-[20%] h-[124px] rounded-md"></Skeleton>
-                  <Skeleton className="w-[80%] h-[124px] rounded-md"></Skeleton>
+                  <Skeleton className="w-[20%] h-[80px]"></Skeleton>
+                  <Skeleton className="w-[80%] h-[80px]"></Skeleton>
                 </div>
-              )
-            }
+                <div className="w-full flex gap-3">
+                  <Skeleton className="w-[20%] h-[80px]"></Skeleton>
+                  <Skeleton className="w-[80%] h-[80px]"></Skeleton>
+                </div>
+              </div>
+            ) : cartItems.length < 1 ? (
+              <div className="text-center text-2xl">Your cart is empty.</div>
+            ) : (
+              cartItems.map((elem: IProduct) => {
+                return (
+                  <CartProductCard
+                    key={elem._id}
+                    image={elem.imagePath}
+                    productName={elem.name}
+                    price={elem.price}
+                    description={elem.description}
+                    category={elem.category}
+                    quantity={elem.quantity ? elem.quantity : 0}
+                  />
+                );
+              })
+            )}
           </div>
           {/* ORDER SUMMARY */}
           <div className="order-summary w-[90%] mx-auto xs:mx-0 min-w-[310px] xs:w-[90%] h-full max-w-[98%] sm:max-w-[60%] flex flex-col p-5 gap-4 sm:h-auto rounded-[20px] border-[1px] border[#0000001A] sm:w-full md:max-w-[48%] xs:min-w-[440px] md:min-w-[340px] lg:min-w-[400px] lg:max-w-[505px] lg:max-h-[458px] md:px-4 lg:py-5 lg:px-6 lg:gap-6">
@@ -65,22 +96,22 @@ const Cart = () => {
             <div className="total-conatiner w-full max-h-[173px] max-w-[457px] h-full lg:max-h-[193px] flex flex-col gap-5">
               <div className="subtotal text-base leading-[21.6px] lg:text-xl lg:leading-[27px] flex justify-between">
                 <p className="text-[#00000099]">Subtotal</p>
-                <p className="font-bold text-right ">$565</p>
+                <p className="font-bold text-right">
+                  {subTotalAmount ? `$${subTotalAmount}` : "$0"}
+                </p>
               </div>
               <div className="subtotal text-base leading-[21.6px] lg:text-xl lg:leading-[27px] flex justify-between">
-                <p className="text-[#00000099]">
-                  Discount &#10088;-20%&#10089;
-                </p>
-                <p className="font-bold text-right text-[#FF3333]">-$113</p>
+                <p className="text-[#00000099]">Discount &#10088;0%&#10089;</p>
+                <p className="font-bold text-right text-[#FF3333]">-$0</p>
               </div>
               <div className="subtotal  text-base leading-[21.6px] lg:text-xl lg:leading-[27px] flex justify-between">
                 <p className="text-[#00000099]">Delivery Fee</p>
-                <p className="font-bold text-right ">$15</p>
+                <p className="font-bold text-right ">0</p>
               </div>
               <div className="total text-base leading-[21.6px] lg:text-xl lg:leading-[27px] flex justify-between mt-5">
                 <p>Total</p>
                 <p className="font-bold text-xl leading-[27px] text-right lg:text-2xl lg:leading-[32.4px]">
-                  $467
+                  {totalAmount ? `$${totalAmount}` : "$0"}
                 </p>
               </div>
             </div>

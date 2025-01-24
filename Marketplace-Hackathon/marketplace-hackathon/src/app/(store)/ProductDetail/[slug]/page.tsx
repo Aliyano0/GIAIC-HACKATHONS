@@ -1,5 +1,5 @@
 import ProductDetail from "../../components/ProductsDetails/ProductDetail";
-import ProductsSuggestions from "../../components/ProductsDetails/Utils/ProductsSuggestions";
+import ProductsSuggestions from "../../components/ProductsDetails/ProductsSuggestions";
 import ProductTestimonials from "../../components/ProductsDetails/Testimonials/ProductTestimonials";
 
 const ProductDetailPage = async ({ params }: { params: { slug: string } }) => {
@@ -7,7 +7,7 @@ const ProductDetailPage = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <div className="w-full">
-      <div className="page-pathname mt-10 pl-3 sm:pl-10 lg:pl-24 w-full h-8 text-sm md:text-base md:leading-[21.6px] lg:mb-6 mb-3 flex justify-between items-center gap-1">
+      <div className="page-pathname mt-10 pl-3 sm:pl-10 xl:pl-24 w-full h-8 text-sm md:text-base md:leading-[21.6px] lg:mb-6 mb-3 flex justify-between items-center gap-1">
         <div className="w-full flex gap-1">
           <span className="inline-block">
             <span className="text-[#00000099] inline-block">Home</span>{" "}

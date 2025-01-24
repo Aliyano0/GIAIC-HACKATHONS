@@ -1,0 +1,10 @@
+Test Case ID:,Test Case Description:,Test Steps:,Expected Result:,Actual Result,Status:,Severity Level:,Assigned To:,Remarks:
+TC0001,Test API error handling	,Disconnect API > Refresh page,Show fallback UI with error message.,Error message shown,Passed,Medium,-,Client side pages are fine but server side pages needs error handling.
+TC0002,Add to Cart Functionality.,Add product to cart > Verify cart contents,Cart updates with added product	,Cart updates as expected.,Passed,High,-,Works as expected but needs delete item option and other calculations.
+TC0003,Search Functionality,Searched items by category>Directed to search page.,Search Page displaying products.,Products displayed correctly.,Passed,Medium,-,Need to add more queries for complex searching
+TC0004,Mobile Navigation Links,Clicked hamburger menu.>Sidebar working.>Tested Links ,Links Directing to pages,Links are directing correctly.,Passed,Medium,-,Working fine.
+TC0005,Mobile Search Functionality.,Clicked Search Icon.> Tested Popover Search bar,Directs to search page after clicking on search icon.,Working as expected.,Passed,Low,-,Working.
+TC0006,Navigation Links,Clicked on each Link.,Links Directing to pages,Links are directing correctly.,Passed,Low,-,Everything working fine including dynamic pages.
+TC0007,Validate product listing page,Open product page > Verify products,Products displayed correctly.,Products displayed correctly.,Passed,Low,-,
+TC0008,Ensure responsiveness on mobile        ,Resize browser window > Check layout.,Layout adjusts properly to screen size ,Responsive layout working as intended.,Passed,Medium,-,"Test successful
+"

@@ -126,11 +126,11 @@ const Footer = () => {
 
           <div className="company-name flex flex-col justify-center items-center gap-4 lg:my-[50px]">
             <div className="w-full h-[1px] rounded-[1px] bg-[#0000001A] lg:max-w-[1240px] lg:mb-5"></div>
-            <div className="md:w-full max-w-[1240px] md:flex items-center md:justify-between">
+            <div className="md:w-full px-3 max-w-[1240px] md:flex items-center md:justify-between">
               <p className="h-[19px] text-sm leading-[18.9px] text-[#00000099] ">
                 Shop.co &copy; 2000-2023, All Rights Reserved
               </p>
-              <div className="payment-methods w-[240.93px] h-[25.74px] flex gap-[10.29px] mt-4 items-center lg:w-auto lg:h-[30.03px] lg:gap-3 lg:mt-0">
+              <div className="payment-methods w-[240.93px] h-[25.74px] grid grid-cols-5 gap-[10.29px] mt-4 items-center lg:w-auto lg:h-[30.03px] lg:gap-3 lg:mt-0">
                 <Image src={visaCard} alt="Visa Card Logo"></Image>
 
                 <Image src={masterCard} alt="Master Card Logo"></Image>

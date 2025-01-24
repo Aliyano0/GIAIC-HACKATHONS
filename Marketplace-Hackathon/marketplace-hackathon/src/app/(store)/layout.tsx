@@ -9,12 +9,12 @@ import Footer from "./components/Footer/Footer";
 const Satoshi = localFont({
   src: "./fonts/Satoshi-Variable.ttf",
   variable: "--font-satoshi",
-  weight: "100 700 900",
+  weight: "100 900",
 });
 const integralCF = localFont({
   src: "./fonts/integralcf-bold.otf",
   variable: "--font-integralCF",
-  weight: "100 400 500 700 900",
+  weight: "400 500 700 900",
 });
 
 export const metadata: Metadata = {

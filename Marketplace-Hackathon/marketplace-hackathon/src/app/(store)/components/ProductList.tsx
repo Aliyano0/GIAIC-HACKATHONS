@@ -12,11 +12,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 const ProductList = async ({ slug }: { slug: string }) => {
-  const productsData = await getProducts(slug);
+  const productsData: IProduct[] = await getProducts(slug);
   const totalProducts = productsData?.length;
   return (
-    <div className="lg:w-full w-full xxs:px-4 sm:px-0">
-      <div className="relative page-pathname pl-3 xxs:px-4 sm:px-5 md:px-0 w-full h-8 text-sm md:text-base md:leading-[21.6px] lg:mt-0 lg:mb-6 mb-3 flex justify-between items-center gap-1">
+    <div className="lg:w-full w-full pl-3 xxs:px-3 sm:px-5">
+      <div className="relative page-pathname w-full h-8 text-sm md:text-base md:leading-[21.6px] lg:mt-0 lg:mb-6 mb-3 flex justify-between items-center gap-1">
         <div className="w-full flex gap-1">
           <span className="inline-block">
             <span className="text-[#00000099] inline-block">Home</span>{" "}
@@ -30,25 +30,25 @@ const ProductList = async ({ slug }: { slug: string }) => {
           )}
         </div>
       </div>
-      <div className="header pl-3 xxs:pl-0 sm:px-5 md:px-0 w-full h-8 lg:h-[43px] flex gap-2 md:gap-0 justify-between items-end">
-        <div className="flex h-5 gap-2 items-center justify-center">
+      <div className="header w-full grid gap-x-10 gap-y-3 justify-between items-end grid-cols-1">
+        <div className="flex h-5 gap-2 items-center justify-start">
           <h2 className="md:h-[43px] font-bold text-2xl leading-[32.4px] md:text-[32px] md:leading-[43.2px]">
             Products
           </h2>
         </div>
-        <div className="w-auto flex justify-normal gap-3 text-[#00000099] md:leading-[21.6px] leading-[18.9px] mb-[2px]">
+        <div className="w-auto min-w-[310px] flex justify-between text-[#00000099] md:leading-[21.6px] leading-[18.9px] mb-[2px]">
           {slug === "Bed" ||
           slug === "Sofa" ||
           slug === "Chair" ||
           slug === "Table" ? (
-            <div className="text-sm lg:text-base h-[10xp] lg:h-4 flex justify-center items-center">
+            <div className="text-xs sm:text-sm lg:text-base h-[10xp] lg:h-4 flex justify-center items-center">
               Showing 1 - {totalProducts} of {totalProducts} Products
             </div>
           ) : (
             ""
           )}
           {slug === "1" || slug === "2" ? (
-            <div className="text-sm lg:text-base h-[10xp] lg:h-4 flex justify-center items-center">
+            <div className="text-xs sm:text-sm lg:text-base h-[10xp] lg:h-4 flex justify-center items-center">
               Showing{" "}
               {slug === "1" && (
                 <span className="mx-1"> 1 - {productsData?.length} </span>
@@ -64,41 +64,41 @@ const ProductList = async ({ slug }: { slug: string }) => {
           ) : (
             ""
           )}
-          <div className="filter-icon flex items-center justify-center lg:hidden text-xl font-black cursor-pointer">
+          <div className="filter-icon items-center justify-center hidden text-xl font-black cursor-pointer">
             <RxMixerVertical />
           </div>
-          <div className="relative w-[180px]">
+          <div className="relative w-[120px] xs:w-[140px] sm:w-[160px] md:w-[180px]">
             <Accordion
-              className="w-full absolute left-0 -top-6 z-20 text-black"
+              className="w-full absolute left-0 -top-8 z-20 text-black"
               type="single"
               collapsible
             >
               <AccordionItem value="item-1">
-                <AccordionTrigger className="text-lg px-2 mr-1">
+                <AccordionTrigger className="text-base md:text-lg xs:px-2 xs:mr-1">
                   Category: {slug === "1" || slug === "2" ? "All" : slug}
                 </AccordionTrigger>
                 <AccordionContent
-                  className={`${slug === "1" || slug === "2" ? "font-semibold" : "font-normal"} text-base bg-white px-2 `}
+                  className={`${slug === "1" || slug === "2" ? "font-semibold" : "font-normal"} text-base bg-white pl-2 `}
                 >
                   <a href="/Shop/1">All</a>
                 </AccordionContent>
                 <AccordionContent
-                  className={`${slug === "Sofa" ? "font-semibold" : "font-normal"} text-base bg-white px-2 `}
+                  className={`${slug === "Sofa" ? "font-semibold" : "font-normal"} text-sm xs:text-base bg-white pl-2 `}
                 >
                   <a href="/Shop/Sofa">Sofa</a>
                 </AccordionContent>
                 <AccordionContent
-                  className={`${slug === "Chair" ? "font-semibold" : "font-normal"} text-base bg-white px-2 `}
+                  className={`${slug === "Chair" ? "font-semibold" : "font-normal"} text-sm xs:text-base bg-white pl-2 `}
                 >
                   <a href="/Shop/Chair">Chairs</a>
                 </AccordionContent>
                 <AccordionContent
-                  className={`${slug === "Bed" ? "font-semibold" : "font-normal"} text-base bg-white px-2 `}
+                  className={`${slug === "Bed" ? "font-semibold" : "font-normal"} text-sm xs:text-base bg-white pl-2 `}
                 >
                   <a href="/Shop/Bed">Beds</a>
                 </AccordionContent>
                 <AccordionContent
-                  className={`${slug === "Table" ? "font-semibold" : "font-normal"} text-base bg-white px-2 `}
+                  className={`${slug === "Table" ? "font-semibold" : "font-normal"} text-sm xs:text-base bg-white pl-2 `}
                 >
                   <a href="/Shop/Table">Tables</a>
                 </AccordionContent>
@@ -112,7 +112,7 @@ const ProductList = async ({ slug }: { slug: string }) => {
           <h1 className="text-xl "> Products Not Found.</h1>
         </div>
       )}
-      <div className="cards-container w-[306px] mx-auto xxs:mx-0 xxs:w-full mt-4 xs:mt-7 sm:mx-auto md:mx-0 sm:w-[90%] md:w-full h-auto overflow-hidden grid grid-cols-1 xxs:grid-cols-2 gap-y-6 gap-x-3 sm:grid-cols-3 lg:grid-cols-4 lg:gap-x-5 lg:gap-y-7 lg:mt-4">
+      <div className="cards-container w-[306px] xxs:w-[90%] mx-auto xs:mx-0 xs:w-full mt-5 xs:mt-7 sm:mx-0 sm:w-full h-auto overflow-hidden grid grid-cols-1 xs:grid-cols-2 gap-y-6 gap-x-3 sm:grid-cols-3 xl:grid-cols-4 lg:gap-x-5 lg:gap-y-7 lg:mt-4">
         {productsData &&
           productsData.map((elem: IProduct) => {
             return (

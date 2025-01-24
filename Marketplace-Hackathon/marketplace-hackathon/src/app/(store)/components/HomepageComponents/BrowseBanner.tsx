@@ -24,14 +24,14 @@ const BrowseBanner = ({
   return (
     <>
       {size === "small" && (
-        <div className="w-[310px] h-[190px] sm:w-[50%] sm:m-w-[310px] sm:h-[200px] md:w-[40%] md:h-[220px] lg:h-[260px] xl:w-[407px] xl:h-[289px] overflow-hidden shadow-md rounded-[20px] relative">
+        <div className="w-[310px] h-[190px] sm:w-[305px] sm:h-[200px] md:w-[240px] md:h-[220px] lg:w-[300px] lg:h-[260px] xl:w-[407px] xl:h-[289px] overflow-hidden shadow-md rounded-[20px] relative">
           <Image
             src={image}
             alt={alt}
             width={407}
             height={289}
             className={`absolute left-0 ${left}
-              ${top ? top : "bottom-[-30%]  lg:top-[-240px]"}  
+              ${top ? top : "bottom-[-30%] md:-top-[100px] xl:top-[-240px]"}  
               ${mirrored ? "scale-x-[-1]" : " "} lg:bottom-auto hover:scale-110 duration-500 transition-transform `}
           />
           <div
@@ -45,7 +45,7 @@ const BrowseBanner = ({
         </div>
       )}
       {size === "large" && (
-        <div className="w-[310px] h-[190px] sm:w-[50%] sm:m-w-[310px] sm:min-h-[200px] md:w-[60%] md:h-[220px] lg:h-[260px] xl:w-[684px] xl:h-[289px] overflow-hidden shadow-md rounded-[20px] relative">
+        <div className="w-[310px] h-[190px] sm:w-[305px] sm:min-h-[200px] md:w-[400px] lg:w-[550px] md:h-[220px] lg:h-[260px] xl:w-[684px] xl:h-[289px] overflow-hidden shadow-md rounded-[20px] relative">
           <Image
             src={image}
             alt={alt}

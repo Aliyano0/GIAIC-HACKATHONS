@@ -10,18 +10,21 @@ const ProductCard = ({
   description,
   stock = 0,
   discountPercentage = "0",
+  suggestionSection = false,
 }: IProductCard) => {
   return (
     <>
-      <div className="card border p-4 rounded-lg w-[306px] xxs:min-w-[172px] h-auto xxs:w-auto lg:min-w-[225px] xl:w-[405px] shadow-md">
-        <div className="clothes-image w-full h-[280px] xxs:h-[174px] xs:h-[265px] sm:h-[190px] md:h-[200px] lg:h-[235px] xl:h-[298px] rounded-[20px] relative z-10 bg-white overflow-hidden">
+      <div
+        className={` ${suggestionSection ? "w-[306px] min-w-[306px]" : "xxs:min-w-[172px] xxs:w-auto w-full lg:min-w-[306px] min-w-[306px]"} card border  p-4 rounded-lg h-auto shadow-md `}
+      >
+        <div className="clothes-image w-full h-[280px] sm:h-[190px] md:h-[200px] lg:h-[235px] xl:h-[298px] rounded-[20px] relative z-10 bg-white overflow-hidden">
           {productPicture && (
             <Image
               src={productPicture}
               alt={productName}
               width={298}
               height={250}
-              className="w-full h-[260px] bottom-0 sm:bottom-auto xs:top-0 sm:-top-7 md:top-0 top-3 xxs:top-[-43px] xl:top-[-71px] absolute md:h-full xl:h-[441px] z-0 object-contain left-[1px] hover:scale-110 duration-500 transition-transform rounded-md"
+              className="w-full h-[260px] bottom-0 sm:bottom-auto xs:top-0 sm:-top-7 md:top-0 top-3 xxs:top-[-43px] xl:top-[-71px] absolute md:h-full xl:h-[441px] z-0 object-contain left-[1px] lg840:hover:scale-110 duration-500 transition-transform rounded-md"
             ></Image>
           )}
           {stock === 0 && (
