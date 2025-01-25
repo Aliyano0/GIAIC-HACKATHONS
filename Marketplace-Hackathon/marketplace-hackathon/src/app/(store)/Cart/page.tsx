@@ -24,7 +24,7 @@ const Cart = () => {
 
   useEffect(() => {
     let subTotal = 0;
-    let totalDiscount = 0;
+    // let totalDiscount = 0;
     // let totalDiscountPercentage = 0;
     let total = 0;
     cartItems.forEach((elem) => {
@@ -33,7 +33,7 @@ const Cart = () => {
       //   ? parseInt(elem.discountPercentage) * elem.quantity
       //   : parseInt(elem.discountPercentage);
       // totalDiscount += (subTotal * totalDiscount) / 100;
-      total = subTotal - totalDiscount;
+      total = subTotal;
     });
     setSubTotalAmount(subTotal);
     // setDiscountPercentage(totalDiscountPercentage);

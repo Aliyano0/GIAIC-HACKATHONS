@@ -1,6 +1,7 @@
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import Link from "next/link";
+import { IProduct } from "../types/product";
 
 const searchProductByName = async (searchParam: string) => {
   const searcheResult = await client.fetch(`
@@ -17,7 +18,7 @@ const SearchPage = async ({
   };
 }) => {
   const { query } = await searchParams;
-  const products = await searchProductByName(query);
+  const products: IProduct[] = await searchProductByName(query);
 
   if (!products.length) {
     return (
@@ -40,7 +41,7 @@ const SearchPage = async ({
           Search results for {query}.
         </h1>
         <div className="grid grid-cols-1 xxs:grid-cols-2 md:grid-cols-3 gap-4">
-          {products.map((product: any) => (
+          {products.map((product: IProduct) => (
             <Link
               key={product._id}
               href={`/ProductDetail/${product.slug.current}`}
