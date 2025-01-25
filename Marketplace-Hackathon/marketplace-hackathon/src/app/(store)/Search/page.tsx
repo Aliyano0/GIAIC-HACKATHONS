@@ -4,18 +4,23 @@ import Link from "next/link";
 import { IProduct } from "../types/product";
 
 const searchProductByName = async (searchParam: string) => {
-  const searcheResult = await client.fetch(`
+  try {
+    const searcheResult = await client.fetch(`
     *[_type == "product" && category match "${searchParam}"] | order(name asc)
     `);
-  return searcheResult || [];
+    return searcheResult || [];
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
 };
 
 const SearchPage = async ({
   searchParams,
 }: {
-  searchParams: {
+  searchParams: Promise<{
     query: string;
-  };
+  }>;
 }) => {
   const { query } = await searchParams;
   const products: IProduct[] = await searchProductByName(query);
