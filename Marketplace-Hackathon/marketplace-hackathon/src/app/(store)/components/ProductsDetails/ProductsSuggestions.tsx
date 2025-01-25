@@ -1,6 +1,7 @@
 import { IProduct } from "@/app/(store)/types/product";
 import ProductCard from "../ProductCard";
 import { client } from "@/sanity/lib/client";
+import Link from "next/link";
 
 const getProductsCardData = async () => {
   const products = await client.fetch(`
@@ -32,18 +33,20 @@ const ProductsSuggestions = async () => {
         <div className="clothes-row w-full pl-5 xl:pl-0 md:gap-4 xl:gap-5 flex gap-[14px] lg:gap-5 xl:justify-center overflow-scroll no-scrollbar lg:mx-auto">
           {productsCardData.map((elem: IProduct) => {
             return (
-              <ProductCard
-                key={elem._id}
-                productPicture={elem.imagePath}
-                productName={elem.name}
-                productCategory={elem.category}
-                description={elem.description}
-                stock={elem.stockLevel}
-                productPrice={elem.price}
-                productRating={elem.rating}
-                discountPercentage={elem.discountPercentage}
-                suggestionSection={true}
-              ></ProductCard>
+              <Link href={`/ProductDetail/${elem.slug.current}`} key={elem._id}>
+                <ProductCard
+                  key={elem._id}
+                  productPicture={elem.imagePath}
+                  productName={elem.name}
+                  productCategory={elem.category}
+                  description={elem.description}
+                  stock={elem.stockLevel}
+                  productPrice={elem.price}
+                  productRating={elem.rating}
+                  discountPercentage={elem.discountPercentage}
+                  suggestionSection={true}
+                ></ProductCard>
+              </Link>
             );
           })}
         </div>
