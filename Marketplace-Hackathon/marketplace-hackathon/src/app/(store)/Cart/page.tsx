@@ -20,26 +20,26 @@ const Cart = () => {
     const cartArrayItems: IProduct[] = Object.values(cart);
     setCartItems(cartArrayItems);
     setLoading(false);
-  }, [cartItems.length]);
+  }, []);
 
   useEffect(() => {
     let subTotal = 0;
     let totalDiscount = 0;
-    let totalDiscountPercentage = 0;
+    // let totalDiscountPercentage = 0;
     let total = 0;
     cartItems.forEach((elem) => {
       subTotal += elem.quantity ? elem.quantity * elem.price : elem.price;
-      totalDiscountPercentage = elem.quantity
-        ? parseInt(elem.discountPercentage) * elem.quantity
-        : parseInt(elem.discountPercentage);
-      totalDiscount += (subTotal * totalDiscount) / 100;
+      // totalDiscountPercentage = elem.quantity
+      //   ? parseInt(elem.discountPercentage) * elem.quantity
+      //   : parseInt(elem.discountPercentage);
+      // totalDiscount += (subTotal * totalDiscount) / 100;
       total = subTotal - totalDiscount;
     });
     setSubTotalAmount(subTotal);
     // setDiscountPercentage(totalDiscountPercentage);
     // setDiscount(totalDiscount);
     setTotalAmount(total);
-  }, [cartItems.length]);
+  }, []);
   return (
     <div className="w-full xs:px-4 xl:px-10 2xl:px-[100px] flex flex-col justify-center items-center">
       <div className="page-pathname  mt-10 w-[90%] mx-auto xs:mx-0 xs:w-full h-[19px] text-sm leading-[18.9] md:text-base md:leading-[21.6px] md:mt-12 flex items-center gap-1">

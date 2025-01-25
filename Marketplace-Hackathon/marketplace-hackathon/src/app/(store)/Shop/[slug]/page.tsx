@@ -1,5 +1,5 @@
 import ProductList from "../../components/ProductList";
-import Filters from "../../components/CategoryComponents/Filters/Filters";
+// import Filters from "../../components/CategoryComponents/Filters/Filters";
 import LineSeparator from "../../components/LineSeparator";
 
 const Shop = async ({ params }: { params: { slug: string } }) => {

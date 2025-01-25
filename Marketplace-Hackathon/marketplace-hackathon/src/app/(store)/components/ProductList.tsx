@@ -80,27 +80,27 @@ const ProductList = async ({ slug }: { slug: string }) => {
                 <AccordionContent
                   className={`${slug === "1" || slug === "2" ? "font-semibold" : "font-normal"} text-base bg-white pl-2 `}
                 >
-                  <a href="/Shop/1">All</a>
+                  <Link href="/Shop/1">All</Link>
                 </AccordionContent>
                 <AccordionContent
                   className={`${slug === "Sofa" ? "font-semibold" : "font-normal"} text-sm xs:text-base bg-white pl-2 `}
                 >
-                  <a href="/Shop/Sofa">Sofa</a>
+                  <Link href="/Shop/Sofa">Sofa</Link>
                 </AccordionContent>
                 <AccordionContent
                   className={`${slug === "Chair" ? "font-semibold" : "font-normal"} text-sm xs:text-base bg-white pl-2 `}
                 >
-                  <a href="/Shop/Chair">Chairs</a>
+                  <Link href="/Shop/Chair">Chairs</Link>
                 </AccordionContent>
                 <AccordionContent
                   className={`${slug === "Bed" ? "font-semibold" : "font-normal"} text-sm xs:text-base bg-white pl-2 `}
                 >
-                  <a href="/Shop/Bed">Beds</a>
+                  <Link href="/Shop/Bed">Beds</Link>
                 </AccordionContent>
                 <AccordionContent
                   className={`${slug === "Table" ? "font-semibold" : "font-normal"} text-sm xs:text-base bg-white pl-2 `}
                 >
-                  <a href="/Shop/Table">Tables</a>
+                  <Link href="/Shop/Table">Tables</Link>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

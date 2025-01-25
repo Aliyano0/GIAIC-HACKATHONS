@@ -1,8 +1,6 @@
 import { client } from "@/sanity/lib/client";
-import Form from "next/form";
 import Image from "next/image";
 import Link from "next/link";
-import { FaSearch } from "react-icons/fa";
 
 const searchProductByName = async (searchParam: string) => {
   const searcheResult = await client.fetch(`

@@ -1,6 +1,6 @@
 import { client } from "@/sanity/lib/client";
 
-export async function GET(req) {
+export async function GET() {
   try {
     const data = await client.fetch(`
     *[_type == "product" && slug.current == "blue-bed"]{ 
