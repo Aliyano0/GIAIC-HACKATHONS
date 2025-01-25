@@ -2,7 +2,7 @@ import ProductList from "../../components/ProductList";
 // import Filters from "../../components/CategoryComponents/Filters/Filters";
 import LineSeparator from "../../components/LineSeparator";
 
-const Shop = async ({ params }: { params: { slug: string } }) => {
+const Shop = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
   const category = slug;
   return (

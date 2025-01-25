@@ -2,7 +2,11 @@ import ProductDetail from "../../components/ProductsDetails/ProductDetail";
 import ProductsSuggestions from "../../components/ProductsDetails/ProductsSuggestions";
 import ProductTestimonials from "../../components/ProductsDetails/Testimonials/ProductTestimonials";
 
-const ProductDetailPage = async ({ params }: { params: { slug: string } }) => {
+const ProductDetailPage = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) => {
   const { slug } = await params;
 
   return (
