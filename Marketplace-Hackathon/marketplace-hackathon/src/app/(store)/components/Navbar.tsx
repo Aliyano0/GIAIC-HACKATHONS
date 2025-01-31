@@ -1,13 +1,13 @@
 "use client";
-// import {
-//   ClerkLoaded,
-//   SignedIn,
-//   SignInButton,
-//   SignUpButton,
-//   UserButton,
-//   useUser,
-// } from "@clerk/nextjs";
-import { SignUpButton, useUser } from "@clerk/nextjs";
+import {
+  ClerkLoaded,
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+  useUser,
+} from "@clerk/nextjs";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaSearch } from "react-icons/fa";
 import { LuShoppingCart } from "react-icons/lu";
@@ -168,32 +168,33 @@ const Navbar = () => {
             </Link>
 
             {/* User section Will Complete this in the future. */}
-            {/* <ClerkLoaded>
+            <ClerkLoaded>
               <SignedIn>
-                <Link href={"/orders"}>
-                  <button className="bg-black text-white px-4 py-2 rounded-md tracking-[1px] shadow-md ">
-                    Orders
-                  </button>
-                </Link>
-              </SignedIn>
-              {user ? (
-                <UserButton />
-              ) : (
                 <div className="w-[50%] flex gap-2">
+                  <Link href={"/orders"}>
+                    <button className="bg-black text-white px-4 py-2 rounded-md tracking-[1px] shadow-md ">
+                      Orders
+                    </button>
+                  </Link>
+                  <UserButton />
+                </div>
+              </SignedIn>
+              <SignedOut>
+                <div className="min-w-[50%] flex gap-2 font-semibold text-sm lg:text-base">
                   <SignUpButton mode="modal">
-                    <span className="gap-1 font-semibold 2xl:text-lg hover:shadow-none shadow-md transition-all duration-500 border p-2 ">
+                    <span className="cursor-pointer hover:shadow-none shadow-md transition-all duration-500 border p-2 ">
                       Sign Up
                     </span>
                   </SignUpButton>
 
                   <SignInButton mode="modal">
-                    <span className="gap-1 font-semibold 2xl:text-lg hover:shadow-none shadow-md transition-all duration-500 border p-2 ">
+                    <span className="cursor-pointer hover:shadow-none shadow-md transition-all duration-500 border p-2 ">
                       Log In
                     </span>
                   </SignInButton>
                 </div>
-              )}
-            </ClerkLoaded> */}
+              </SignedOut>
+            </ClerkLoaded>
           </div>
         </nav>
       </header>

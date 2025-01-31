@@ -71,9 +71,9 @@ const Footer = () => {
                 large={true}
                 small={false}
                 fontWeight="font-medium"
-                width="w-[280px] xs:w-[311px]  lg:w-[349px]"
+                width="w-[280px] xs:w-[311px] lg:w-[349px]"
                 height="h-[42px] lg:h-[46px]]"
-                bg="bg-white"
+                bg="bg-white hover:bg-[#f0f0f0]"
                 textColor="text-black"
               />
             </div>
@@ -84,8 +84,8 @@ const Footer = () => {
             <div className=" lg:h-[177px] lg:flex lg:gap-[80px] xl:gap-[112px]">
               <div className="heading flex flex-col gap-5 lg:gap-[35px] lg:w-[248px] lg:h-[177px]">
                 <div className="text flex flex-col gap-[14px] lg:gap-[25px] lg:max-w-[248px] lg:h-[114px] px-2 xs:px-0">
-                  <h3 className="integralCF font-bold text-[28.85px] leading-[34.62px] lg:text-[33.45px] lg:leading-[40.15px] text-black">
-                    SHOP.CO
+                  <h3 className="integralCF font-bold text-2xl text-black">
+                    TIMELESS TIMBER
                   </h3>
                   <p className="text-sm leading-5 max-w-[357px] h-[40px] text-[#00000099] lg:w-[248px] lg:[66px] lg:leading-[22px]">
                     We have clothes that suits your style and which you&apos;re
