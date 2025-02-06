@@ -1,5 +1,5 @@
-// import { checkRole } from "../../../../utils/roles";
-// import { redirect } from "next/navigation";
+import { checkRole } from "../../../../utils/roles";
+import { redirect } from "next/navigation";
 
 async function AdminDashboard() {
   // checkRole is a util function that checks the user's role. If the user is not an admin, it will return false.
@@ -10,7 +10,8 @@ async function AdminDashboard() {
   }
   return (
     <div>
-      <h1>Admin Dashboard</h1>
+      <h1>Admin</h1>
+      <h1>Dashboard</h1>
     </div>
   );
 }
