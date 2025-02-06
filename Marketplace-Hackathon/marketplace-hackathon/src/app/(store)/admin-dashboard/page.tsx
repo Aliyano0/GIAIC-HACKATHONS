@@ -9,9 +9,10 @@ async function AdminDashboard() {
     redirect("/not-authorised");
   }
   return (
-    <div>
-      <h1>Admin</h1>
-      <h1>Dashboard</h1>
+    <div className="flex justify-center items-center h-[80vh]">
+      <h1 className="text-4xl font-semibold">
+        Admin Dashboard under development.
+      </h1>
     </div>
   );
 }
