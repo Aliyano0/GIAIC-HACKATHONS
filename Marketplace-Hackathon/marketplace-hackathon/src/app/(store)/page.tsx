@@ -50,7 +50,7 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className="Hero-Image mt-11 w-full xs:w-[70%] xs:self-end md:w-[50%] md:min-w-[374px] lg:min-w-[512px] xl:w-[620px] relative z-0 overflow-hidden flex items-end justify-center">
+        <div className="Hero-Image mt-11 w-full xs:w-[70%] xs:self-end md:w-[50%] md:min-w-[374px] lg:min-w-[505px] xl:w-[620px] relative z-0 overflow-hidden flex items-end justify-center">
           <div className="h-full overflow-hidden flex items-end justify-center">
             <Image
               src={heroImage}
