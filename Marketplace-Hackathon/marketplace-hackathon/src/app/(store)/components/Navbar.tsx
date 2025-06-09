@@ -18,16 +18,25 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useCartProductQuantity, useCartStore } from "@/app/store";
 
 const Navbar = () => {
   //Clerk User
   const { user } = useUser();
+  const cart = useCartStore((state) => state.cart);
+  const setCartProductsQuantity = useCartProductQuantity(
+    (state) => state.setCartProductsQuantity
+  );
+  const cartQuantity = useCartProductQuantity((state) => state.cartQuantity);
   const [promoHeadlineStatus, setPromoHeadlineStatus] = useState(true);
   const [mobileMenuStatus, setMobileMenuStatus] = useState(false);
   const handlepromoHeadlineClick = () => {
     setPromoHeadlineStatus(!promoHeadlineStatus);
   };
+  useEffect(() => {
+    setCartProductsQuantity(cart.length);
+  }, [cart.length]);
   return (
     <>
       <header className="w-full bg-[#fff] text-black">
@@ -63,14 +72,18 @@ const Navbar = () => {
               <GiHamburgerMenu className="text-[23px]" />
             </div>
             <div
-              className={` ${mobileMenuStatus ? " block " : " hidden"} Mobile-Menu-Container md:hidden w-full absolute top-0 left-0 h-screen bg-[#fff] z-20  bg-transparent transition-all duration-500 `}
+              className={` ${
+                mobileMenuStatus ? " block " : " hidden"
+              } Mobile-Menu-Container md:hidden w-full absolute top-0 left-0 h-screen bg-[#fff] z-20  bg-transparent transition-all duration-500 `}
             >
               <div
                 onClick={() => setMobileMenuStatus(!mobileMenuStatus)}
                 className="opacity-50 bg-black z-20 w-full h-full absolute top-0 left-0 blur"
               ></div>
               <div
-                className={`Mobile-Menu-Content sm:w-1/2 h-full absolute z-40 top-0 left-0 bg-white transition-all duration-700 delay-500 ${mobileMenuStatus ? "w-[70%]" : "w-[10%]"}`}
+                className={`Mobile-Menu-Content sm:w-1/2 h-full absolute z-40 top-0 left-0 bg-white transition-all duration-700 delay-500 ${
+                  mobileMenuStatus ? "w-[70%]" : "w-[10%]"
+                }`}
               >
                 <div
                   onClick={() => setMobileMenuStatus(!mobileMenuStatus)}
@@ -160,10 +173,13 @@ const Navbar = () => {
               href="/Cart"
               className="flex  xs:w-[30%] h-[46px] xs:min-w-[130px] max-w-[130px] items-center gap-1 font-semibold hover:shadow-none shadow-md transition-all duration-500 border py-1 px-2 xxs:p-2 "
             >
-              <span className="text-sm xxs:text-base sm:text-lg">
+              <span className="text-sm xxs:text-xs sm:text-base">
                 Your Cart{" "}
               </span>
               <LuShoppingCart className="text-[20px] md:text-[24px]" />
+              <span className="align-super text-[8px] sm:text-xs">
+                {cartQuantity}
+              </span>
               {/* Span item count with global state or localStorage */}
             </Link>
 

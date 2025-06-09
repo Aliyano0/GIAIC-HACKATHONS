@@ -10,7 +10,7 @@ export interface IProduct {
   category: string;
   slug: { current: string, type: string };
   stockLevel: number;
-  quantity?: number;
+  quantity: number;
 }
 
 

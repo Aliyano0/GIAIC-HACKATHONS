@@ -5,41 +5,69 @@ import Button from "../components/Buttons/Button";
 import { useEffect, useState } from "react";
 import { IProduct } from "../types/product";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useCartStore } from "@/app/store";
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState<IProduct[]>([]);
+  const cart = useCartStore((state) => state.cart);
   const [subTotalAmount, setSubTotalAmount] = useState(0);
   const [totalAmount, setTotalAmount] = useState(0);
-  // const [discount, setDiscount] = useState(0);
-  // const [discountPercentage, setDiscountPercentage] = useState(0);
+  const [discount, setDiscount] = useState(0);
+  const [discountPercentage, setDiscountPercentage] = useState(0);
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    const cartArray = [];
-    const cart = JSON.parse(localStorage.getItem("cart") || "{}");
-    cartArray.push(cart);
-    const cartArrayItems: IProduct[] = Object.values(cart);
-    setCartItems(cartArrayItems);
-    setLoading(false);
-  }, []);
+  ////// PREVIOUS CODE FOR LOCAL STORAGE
+  // useEffect(() => {
+  //   // const cartArray = [];
+  //   // const cart = JSON.parse(localStorage.getItem("cart") || "{}");
+  //   // cartArray.push(cart);
+  //   // const cartArrayItems: IProduct[] = Object.values(cart);
+  //
+  // }, []);
 
   useEffect(() => {
     let subTotal = 0;
-    // let totalDiscount = 0;
-    // let totalDiscountPercentage = 0;
-    let total = 0;
-    cartItems.forEach((elem) => {
-      subTotal += elem.quantity ? elem.quantity * elem.price : elem.price;
-      // totalDiscountPercentage = elem.quantity
-      //   ? parseInt(elem.discountPercentage) * elem.quantity
-      //   : parseInt(elem.discountPercentage);
-      // totalDiscount += (subTotal * totalDiscount) / 100;
-      total = subTotal;
+    let totalDiscount = 0;
+
+    cart.forEach((item) => {
+      const quantity = item.quantity || 1;
+      const pricePerItem = item.price || 0;
+      const discountPercentage = parseFloat(item.discountPercentage) || 0;
+
+      const itemTotal = quantity * pricePerItem;
+      const itemDiscount = (itemTotal * discountPercentage) / 100;
+
+      subTotal += itemTotal;
+      totalDiscount += itemDiscount;
     });
+
+    const total = subTotal - totalDiscount;
+    const averageDiscountPercentage = (totalDiscount / subTotal) * 100;
+    if (cart.length === 0) {
+      setLoading(false);
+    }
+    setLoading(false);
     setSubTotalAmount(subTotal);
-    // setDiscountPercentage(totalDiscountPercentage);
-    // setDiscount(totalDiscount);
+    setDiscount(totalDiscount);
+    setDiscountPercentage(parseFloat(averageDiscountPercentage.toFixed(2)));
     setTotalAmount(total);
-  }, []);
+
+    //// PREVIOUS CODE WITH FLAWED DISCOUNT LOGIC ////
+    // let subTotal = 0;
+    // // let totalDiscount = 0;
+    // // let totalDiscountPercentage = 0;
+    // let total = 0;
+    // cart.forEach((elem) => {
+    //   subTotal += elem.quantity ? elem.quantity * elem.price : elem.price;
+    //   // totalDiscountPercentage = elem.quantity
+    //   //   ? parseInt(elem.discountPercentage) * elem.quantity
+    //   //   : parseInt(elem.discountPercentage);
+    //   // totalDiscount += (subTotal * totalDiscount) / 100;
+    //   total = subTotal;
+    // });
+    // setSubTotalAmount(subTotal);
+    // // setDiscountPercentage(totalDiscountPercentage);
+    // // setDiscount(totalDiscount);
+    // setTotalAmount(total);
+  }, [cart, cart.length]);
   return (
     <div className="w-full xs:px-4 xl:px-10 2xl:px-[100px] flex flex-col justify-center items-center">
       <div className="page-pathname  mt-10 w-[90%] mx-auto xs:mx-0 xs:w-full h-[19px] text-sm leading-[18.9] md:text-base md:leading-[21.6px] md:mt-12 flex items-center gap-1">
@@ -70,21 +98,20 @@ const Cart = () => {
                   <Skeleton className="w-[80%] h-[80px]"></Skeleton>
                 </div>
               </div>
-            ) : cartItems.length < 1 ? (
+            ) : cart.length < 1 ? (
               <div className="text-center text-2xl">Your cart is empty.</div>
             ) : (
-              cartItems.map((elem: IProduct) => {
-                return (
-                  <CartProductCard
-                    key={elem._id}
-                    image={elem.imagePath}
-                    productName={elem.name}
-                    price={elem.price}
-                    description={elem.description}
-                    category={elem.category}
-                    quantity={elem.quantity ? elem.quantity : 0}
-                  />
-                );
+              cart.map((elem: IProduct) => {
+                return <CartProductCard key={elem._id} product={elem} />;
+
+                /// PREVIOUS CODE ///
+                // id={elem._id}
+                //     image={elem.imagePath}
+                //     productName={elem.name}
+                //     price={elem.price}
+                //     description={elem.description}
+                //     category={elem.category}
+                //     quantity={elem.quantity ? elem.quantity : 0}
               })
             )}
           </div>
@@ -101,8 +128,12 @@ const Cart = () => {
                 </p>
               </div>
               <div className="subtotal text-base leading-[21.6px] lg:text-xl lg:leading-[27px] flex justify-between">
-                <p className="text-[#00000099]">Discount &#10088;0%&#10089;</p>
-                <p className="font-bold text-right text-[#FF3333]">-$0</p>
+                <p className="text-[#00000099]">
+                  Discount &#10088;{discountPercentage}%&#10089;
+                </p>
+                <p className="font-bold text-right text-[#FF3333]">
+                  ${discount}
+                </p>
               </div>
               <div className="subtotal  text-base leading-[21.6px] lg:text-xl lg:leading-[27px] flex justify-between">
                 <p className="text-[#00000099]">Delivery Fee</p>

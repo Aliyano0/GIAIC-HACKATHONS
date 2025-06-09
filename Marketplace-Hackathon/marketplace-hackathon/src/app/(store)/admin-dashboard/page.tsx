@@ -11,7 +11,7 @@ async function AdminDashboard() {
   return (
     <div className="flex justify-center items-center h-[80vh]">
       <h1 className="text-4xl font-semibold">
-        Admin Dashboard under development.
+        Admin Dashboard is under development.
       </h1>
     </div>
   );
