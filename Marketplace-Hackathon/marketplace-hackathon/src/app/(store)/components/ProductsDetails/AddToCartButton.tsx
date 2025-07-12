@@ -5,8 +5,7 @@ import { useCartStore } from "@/app/store";
 const AddToCartButton = ({ cartProduct }: { cartProduct: IProduct }) => {
   const quantity = useCartStore((state) => state.quantity);
 
-  const { resetQuantity, decrementQuantity, incrementQuantity } =
-    useCartStore();
+  const { resetQuantity, decrementQuantity, incrementQuantity } = useCartStore();
 
   const { addToCart } = useCartStore();
 

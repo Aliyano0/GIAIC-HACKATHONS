@@ -1,4 +1,4 @@
-export default {
+ const customers = {
   name: "customers",
   title: "Customers",
   type: "document",
@@ -54,3 +54,5 @@ export default {
     }
   ]
 }
+
+export default customers;

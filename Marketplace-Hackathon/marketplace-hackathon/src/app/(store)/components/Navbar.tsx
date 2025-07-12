@@ -36,7 +36,7 @@ const Navbar = () => {
   };
   useEffect(() => {
     setCartProductsQuantity(cart.length);
-  }, [cart.length]);
+  }, [cart.length, setCartProductsQuantity]);
   return (
     <>
       <header className="w-full bg-[#fff] text-black">

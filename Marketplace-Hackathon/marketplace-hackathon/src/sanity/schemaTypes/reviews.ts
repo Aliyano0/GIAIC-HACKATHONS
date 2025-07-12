@@ -1,6 +1,6 @@
 import { Rule } from "sanity";
 
-export default {
+const reviews = {
   name: "reviews",
   title: "Reviews",
   type: "document",
@@ -37,3 +37,6 @@ export default {
     },
   ],
 };
+
+
+export default reviews;

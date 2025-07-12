@@ -19,7 +19,7 @@ interface CartState {
   decrementQuantity: () => void
   resetQuantity: () => void
   cart: IProduct[];
-  addToCart: (product: Omit<IProduct, 'quantity'>) => void;
+  addToCart: (product: Omit<IProduct, 'quantity: number'>) => void;
   deleteItem: (product: IProduct) => void;
   incrementQuantityOfItemInCart: (product: IProduct) => void;
   decrementQuantityOfItemInCart: (product: IProduct) => void;

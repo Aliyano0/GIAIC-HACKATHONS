@@ -1,4 +1,4 @@
-export default {
+const shipment = {
   name: "shipment",
   title: "Shipment",
   type: "document",
@@ -32,3 +32,5 @@ export default {
     },
   ],
 };
+
+export default shipment;
