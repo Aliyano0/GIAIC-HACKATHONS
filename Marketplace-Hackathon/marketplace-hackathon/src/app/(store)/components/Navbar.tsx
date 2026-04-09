@@ -91,7 +91,7 @@ const Navbar = () => {
                 >
                   x
                 </div>
-                <h1 className="text-xl integralCF font-bold mt-10 text-center">
+                <h1 className="text-lg xxs:text-xl integralCF font-bold mt-10 text-center">
                   TIMELESS TIMBER
                 </h1>
                 <div className="flex flex-col items-center justify-center gap-5 mt-10 text-[18px] xxs:text-[20px]">
@@ -171,24 +171,23 @@ const Navbar = () => {
             <div className="lg:hidden relative"></div>
             <Link
               href="/Cart"
-              className="flex  xs:w-[30%] h-[46px] xs:min-w-[130px] max-w-[130px] items-center gap-1 font-semibold hover:shadow-none shadow-md transition-all duration-500 border py-1 px-2 xxs:p-2 "
+              className="flex items-center gap-1 font-semibold hover:shadow-none shadow-md transition-all duration-500 border py-1.5 px-1.5 xs:py-2 xs:px-3 whitespace-nowrap"
             >
-              <span className="text-sm xxs:text-xs sm:text-base">
-                Your Cart{" "}
+              <span className="hidden xs:inline text-xs xs:text-sm sm:text-base">
+                Cart
               </span>
-              <LuShoppingCart className="text-[20px] md:text-[24px]" />
-              <span className="align-super text-[8px] sm:text-xs">
+              <LuShoppingCart className="text-base xs:text-lg md:text-xl" />
+              <span className="text-[10px] xs:text-xs">
                 {cartQuantity}
               </span>
-              {/* Span item count with global state or localStorage */}
             </Link>
 
             {/* User section Will Complete this in the future. */}
             <ClerkLoaded>
               <SignedIn>
-                <div className="w-[50%] flex gap-2">
+                <div className="flex gap-1 xs:gap-2">
                   <Link href={"/orders"}>
-                    <button className="bg-black text-white px-4 py-2 rounded-md tracking-[1px] shadow-md ">
+                    <button className="bg-black text-white px-1.5 xs:px-3 lg:px-4 py-1.5 xs:py-2 rounded-md text-[10px] xs:text-sm lg:text-base shadow-md whitespace-nowrap">
                       Orders
                     </button>
                   </Link>
@@ -196,15 +195,15 @@ const Navbar = () => {
                 </div>
               </SignedIn>
               <SignedOut>
-                <div className="min-w-[50%] flex gap-2 font-semibold text-sm lg:text-base">
+                <div className="flex gap-1 xs:gap-2 font-semibold text-[10px] xs:text-sm lg:text-base">
                   <SignUpButton mode="modal">
-                    <span className="cursor-pointer hover:shadow-none shadow-md transition-all duration-500 border p-2 ">
+                    <span className="cursor-pointer hover:shadow-none shadow-md transition-all duration-500 border px-1.5 xs:px-2 py-1.5 xs:py-2 whitespace-nowrap">
                       Sign Up
                     </span>
                   </SignUpButton>
 
                   <SignInButton mode="modal">
-                    <span className="cursor-pointer hover:shadow-none shadow-md transition-all duration-500 border p-2 ">
+                    <span className="cursor-pointer hover:shadow-none shadow-md transition-all duration-500 border px-1.5 xs:px-2 py-1.5 xs:py-2 whitespace-nowrap">
                       Log In
                     </span>
                   </SignInButton>
