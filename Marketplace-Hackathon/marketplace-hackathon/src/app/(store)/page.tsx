@@ -55,7 +55,10 @@ export default async function Home() {
             <Image
               src={heroImage}
               width={800}
+              blurDataURL={heroImage}
+              placeholder="blur"
               alt="Red Sofa Image"
+              loading="lazy"
               height={500}
               className="w-full h-full object-contain"
             ></Image>
